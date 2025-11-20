@@ -1,0 +1,30 @@
+﻿{
+    "scene_id":  "gw_013_retreat",
+    "title":  "退一步",
+    "location":  "前厅",
+    "time_of_day":  "日午",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "不必强求，先稳。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "也许从仓管处入手。",
+                          "emotion":  "calm"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "转向仓管",
+                        "next":  "gw_011_ask_keeper"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

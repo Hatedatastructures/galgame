@@ -1,0 +1,68 @@
+﻿{
+    "scene_id":  "gw_035_extend_1",
+    "title":  "关系确认·延谈",
+    "location":  "后室",
+    "time_of_day":  "黄昏",
+    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "char_images":  [
+                        "assets/char/char_gu_wan_gentle.png",
+                        "assets/char/char_lin_qing_he_soft.png"
+                    ],
+    "char_positions":  [
+                           {
+                               "x":  "35%",
+                               "scale":  1.0
+                           },
+                           {
+                               "x":  "65%",
+                               "scale":  1.0
+                           }
+                       ],
+    "preconditions":  {
+                          "gu_wan_qin_mi_du":  "\u003e=70"
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "你可曾想过离开这城？",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "想过。也想过留下。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "留下，是为了我吗？",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "为了你，也为了茶。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "若有一天我不温柔了，你会不会失望？",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我会陪你找回温柔，不会让你独自走远。",
+                          "emotion":  "firm"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "牵手在灯下",
+                        "set_flags":  {
+                                          "gu_wan_qin_mi_du":  "+3"
+                                      },
+                        "next":  "gw_036_r18_rain_tea"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

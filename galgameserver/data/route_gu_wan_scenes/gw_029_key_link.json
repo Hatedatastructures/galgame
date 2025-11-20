@@ -1,0 +1,30 @@
+﻿{
+    "scene_id":  "gw_029_key_link",
+    "title":  "关键关联",
+    "location":  "后室",
+    "time_of_day":  "夜深",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "初三之账，指向父亲旧交。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "真相必经对质。",
+                          "emotion":  "firm"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "对质父亲",
+                        "next":  "gw_031_tea_house_face"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

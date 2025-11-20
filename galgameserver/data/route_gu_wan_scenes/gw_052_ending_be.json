@@ -1,0 +1,28 @@
+﻿{
+    "scene_id":  "gw_052_ending_be",
+    "title":  "结局：误解成隙（BE）",
+    "location":  "雨巷",
+    "time_of_day":  "夜",
+    "bg_image":  "assets/bg/bg_rain_alley_01.png",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "雨落不止，心事亦然。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我失言。",
+                          "emotion":  "firm"
+                      }
+                  ],
+    "choices":  [
+
+                ],
+    "set_flags":  {
+
+                  }
+}

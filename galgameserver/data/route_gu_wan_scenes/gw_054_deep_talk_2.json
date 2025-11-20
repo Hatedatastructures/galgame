@@ -1,0 +1,375 @@
+﻿{
+    "scene_id":  "gw_054_deep_talk_2",
+    "title":  "深谈其二",
+    "location":  "茶阁后室",
+    "time_of_day":  "深夜",
+    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "char_images":  [
+                        "assets/char/char_gu_wan_calm.png",
+                        "assets/char/char_lin_qing_he_gentle.png"
+                    ],
+    "char_positions":  [
+                           {
+                               "x":  "40%",
+                               "scale":  1.0
+                           },
+                           {
+                               "x":  "60%",
+                               "scale":  1.0
+                           }
+                       ],
+    "preconditions":  {
+                          "gu_wan_qin_mi_du":  "\u003e=83"
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "顾晚，你说茶如人生，那我们的茶泡到何种火候？",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "火候刚好，色清味醇，回甘悠长。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "可我总觉得，还差一沸。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "差的那一沸，是时间的沉淀。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "时间我们有，只是不知够不够。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "够与不够，在于我们如何使用。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那便好好使用，不浪费一分。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "一分一秒，都用来爱你。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "爱字太重，先说喜欢。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "喜欢太轻，承载不了我的心意。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那就折中，说在意。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我在意你，胜过在意茶香的纯度。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "茶香有标准，心意无尺度。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那便用心感受，不计量。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "感受容易，确认很难。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我确认，我的心向着你。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "向着不够，要抵达。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那便抵达，不绕路。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "路有荆棘，怕吗？",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "有你同行，荆棘也开花。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "花会谢，荆棘还在。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那便种花，让荆棘也温柔。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "你的想法，总是诗意。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "诗意需要有人懂，你懂便够了。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我懂，也珍惜。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "珍惜就好，我怕你轻视。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "轻视是错，我不会犯。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那便好，我放心了。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "放心不是终点，是起点。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "起点有你，终点也想有你。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "终点太远，先看脚下。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "脚下有你，步步生花。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "花会引蝶，蝶会恋花。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "蝶恋花，我恋你。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "恋字太甜，小心蛀牙。",
+                          "emotion":  "smile"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "甜到蛀牙也愿意，至少甜过。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "你总有理由，我说不过你。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "不是理由，是心意。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "心意我收下，回礼是陪伴。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "陪伴是最长情的告白，我懂。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "懂就好，不必说破。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "不说破，也明白。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "明白就好，夜已深。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "深便深吧，有你在，不怕黑。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "黑是背景，让星光更亮。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "你是我的星光，照亮前路。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "前路漫长，慢慢走。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "慢慢走，走到白发。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "白发是终点，也是起点。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那便从黑发走到白发，不回头。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "不回头，也不后悔。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "后悔是错，我们不错。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "错与对，留给时间评判。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "时间公正，我不担心。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "不担心就好，安心睡吧。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "睡在你心里，最安稳。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "心里位置有限，你占了大半。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "大半不够，想占全部。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "全部太满，留点空间呼吸。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那便占九成，留一成给你自由。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "自由重要，爱也是。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "爱与自由，我都不想缺。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那就平衡，不偏不倚。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "不偏不倚，正好是你。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我是我，你是你，我们是我们。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我们是我们，最好听的话。",
+                          "emotion":  "gentle"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "转入温柔乡",
+                        "set_flags":  {
+                                          "gu_wan_qin_mi_du":  "+12"
+                                      },
+                        "next":  "gw_060_r18_tender_night"
+                    },
+                    {
+                        "text":  "继续畅谈",
+                        "set_flags":  {
+                                          "gu_wan_qin_mi_du":  "+6"
+                                      },
+                        "next":  "gw_055_deep_talk_3"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

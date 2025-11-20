@@ -1,0 +1,36 @@
+﻿{
+    "scene_id":  "gw_021_track_person",
+    "title":  "追踪旧客",
+    "location":  "石桥与渡口",
+    "time_of_day":  "夜半",
+    "bg_image":  "assets/bg/bg_river_dock_01.png",
+    "char_image":  "assets/char/char_gu_wan_think_calm.png",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "他似在渡口停步。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "风里有茶香的影子。",
+                          "emotion":  "soft"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "上前相问",
+                        "next":  "gw_023_confront"
+                    },
+                    {
+                        "text":  "暗中观察",
+                        "next":  "gw_024_observe"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

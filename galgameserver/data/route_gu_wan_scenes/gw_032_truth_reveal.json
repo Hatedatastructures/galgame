@@ -1,0 +1,34 @@
+﻿{
+    "scene_id":  "gw_032_truth_reveal",
+    "title":  "真相揭示",
+    "location":  "前厅",
+    "time_of_day":  "日午",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "原来是旧交有难，父亲以茶相助。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "人情可守，账目需正。",
+                          "emotion":  "firm"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "拟订正账方案",
+                        "next":  "gw_033_fix_ledger"
+                    },
+                    {
+                        "text":  "先安人心",
+                        "next":  "gw_034_comfort"
+                    }
+                ],
+    "set_flags":  {
+                      "tea_debt_resolved":  1
+                  }
+}

@@ -1,0 +1,30 @@
+﻿{
+    "scene_id":  "gw_005_next_day",
+    "title":  "次日茶香",
+    "location":  "茶阁前厅",
+    "time_of_day":  "午后",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "先生果来。今日茶更和软。",
+                          "emotion":  "smile"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那便与茶同看账。",
+                          "emotion":  "calm"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "开始比对",
+                        "next":  "gw_007_compare"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

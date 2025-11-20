@@ -1,0 +1,35 @@
+﻿{
+    "scene_id":  "gw_038_together",
+    "title":  "携手同行",
+    "location":  "前厅",
+    "time_of_day":  "次日",
+    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "茶路归正。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "人心亦安。",
+                          "emotion":  "soft"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "走向结局（HE）",
+                        "next":  "gw_050_ending_he"
+                    },
+                    {
+                        "text":  "保留余白（NE）",
+                        "next":  "gw_051_ending_ne"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

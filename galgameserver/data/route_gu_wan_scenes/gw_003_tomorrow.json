@@ -1,0 +1,30 @@
+﻿{
+    "scene_id":  "gw_003_tomorrow",
+    "title":  "明日再会",
+    "location":  "茶阁外檐",
+    "time_of_day":  "黄昏",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那便明日。茶不等人，人可等茶。",
+                          "emotion":  "smile"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我会来。",
+                          "emotion":  "calm"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "次日再访",
+                        "next":  "gw_005_next_day"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

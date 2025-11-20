@@ -1,0 +1,375 @@
+﻿{
+    "scene_id":  "gw_053_deep_talk_1",
+    "title":  "深谈其一",
+    "location":  "茶阁后室",
+    "time_of_day":  "夜",
+    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "char_images":  [
+                        "assets/char/char_gu_wan_gentle.png",
+                        "assets/char/char_lin_qing_he_soft.png"
+                    ],
+    "char_positions":  [
+                           {
+                               "x":  "35%",
+                               "scale":  1.0
+                           },
+                           {
+                               "x":  "65%",
+                               "scale":  1.0
+                           }
+                       ],
+    "preconditions":  {
+                          "gu_wan_qin_mi_du":  "\u003e=75"
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "清河，你说人心如茶，需慢慢泡开。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "是。急不得，也慢不得。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那我们的心事，泡到第几沸了？",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "第二沸，茶叶初展，香未全出。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我总想，若有一日我不在这茶阁了，你会如何？",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我会带着你的茶香，去寻下一处江南。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "若我留在原地，你却远行了呢？",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那我便在风里寄一缕茶香回来，提醒你我还记得。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "你说话总像煮茶，听着暖，品着苦。",
+                          "emotion":  "smile"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "苦后回甘，才是好茶。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那我便多尝些苦，等你回甘。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "不必刻意。苦与甘，本就相随。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "茶阁的灯影，今晚格外长。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "是因为我们坐得久，影子也舍不得走。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "你说，若茶凉了，情会凉吗？",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "茶凉可续水，情淡可添心。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那我的心，你可愿一直添？",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "愿。但你也需学会自己添，不然会累。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我懂。只是在你面前，总想偷懒。",
+                          "emotion":  "smile"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "偶尔偷懒无妨，但别成了习惯。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "茶阁外的雨，好像停了。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "停了也好，让路干些，方便行人。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "也方便我们，去更远的地方。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "不急。先把今夜的话说完。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "好，那便慢慢说，说到月落。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "月落还有日出，话是说不完的。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那就说一辈子，如何？",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "一辈子太长，先说明夜吧。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "明夜我还在，茶也还在。",
+                          "emotion":  "smile"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那我便来，带着今日的余温。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "余温够了，再添就烫了。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "烫些也好，让人清醒。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "在你面前，我清醒不了。",
+                          "emotion":  "smile"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那便醉着吧，我扶你。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "扶一辈子？",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "先扶过今夜，再说一辈子。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "今夜很长，够你扶很久了。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那就坐稳，别摔了。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "有你在，摔不了。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "话别说太满，留点余地。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "余地留给你，我留给你。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我收下了，会好好放着。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "别放太久，会凉。",
+                          "emotion":  "smile"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "凉了再热，循环往复。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "就像我们的对话，说不完。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那就继续说，说到天亮。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "天亮还有明日，明日还有夜。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "夜复一夜，话复一语。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "一语成谶，也好。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "成什么谶？",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "成我们在一起的谶。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那便成吧，我不躲。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我也不躲，迎着你。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那就站好，别退。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "不退，一步也不退。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "话重了，轻些说。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "轻重我都说了，你挑着听。",
+                          "emotion":  "smile"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我挑重的听，轻的都忘了。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "重的压心，别忘了。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "压在心里，安全。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "安全就好，我怕你受伤。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "有你在，伤也轻些。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那我一直在，伤就一直轻。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "别说一直，说今夜。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "好，说今夜，今夜我在。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "今夜够了，明日再说。",
+                          "emotion":  "soft"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "继续深谈",
+                        "set_flags":  {
+                                          "gu_wan_qin_mi_du":  "+8"
+                                      },
+                        "next":  "gw_054_deep_talk_2"
+                    },
+                    {
+                        "text":  "转入温柔乡",
+                        "set_flags":  {
+                                          "gu_wan_qin_mi_du":  "+10"
+                                      },
+                        "next":  "gw_060_r18_tender_night"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

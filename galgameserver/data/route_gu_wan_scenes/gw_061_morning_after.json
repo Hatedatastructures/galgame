@@ -1,0 +1,72 @@
+﻿{
+    "scene_id":  "gw_061_morning_after",
+    "title":  "翌日清晨",
+    "location":  "茶阁后室",
+    "time_of_day":  "清晨",
+    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "char_images":  [
+                        "assets/char/char_gu_wan_smile.png",
+                        "assets/char/char_lin_qing_he_gentle.png"
+                    ],
+    "char_positions":  [
+                           {
+                               "x":  "40%",
+                               "scale":  1.0
+                           },
+                           {
+                               "x":  "60%",
+                               "scale":  1.0
+                           }
+                       ],
+    "preconditions":  {
+                          "tender_night_passed":  1
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "清河，早安。茶已温好。",
+                          "emotion":  "smile"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "早安，有你在，晨也温柔。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "昨夜如梦，梦里有你。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "梦外也有我，一直都在。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "一直在，一直爱，一直不分离。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "不分离，是我们最坚定的承诺。",
+                          "emotion":  "firm"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "携手看日出",
+                        "set_flags":  {
+                                          "gu_wan_qin_mi_du":  "+5"
+                                      },
+                        "next":  "gw_063_sunrise_together"
+                    },
+                    {
+                        "text":  "继续茶阁生活",
+                        "next":  "gw_064_daily_life"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

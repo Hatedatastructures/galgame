@@ -1,0 +1,26 @@
+﻿{
+    "scene_id": "gw_025_cross_check",
+    "title": "多账交叉",
+    "location": "后室台案",
+    "time_of_day": "夜深",
+    "preconditions": {},
+    "dialogues": [
+        {
+            "speaker": "lin_qing_he",
+            "line": "店、仓、客三账交叉，缺注者皆指初三。",
+            "emotion": "firm"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "真相近了。",
+            "emotion": "gentle"
+        }
+    ],
+    "choices": [
+        {
+            "text": "继续核查",
+            "next": "gw_029_key_link"
+        }
+    ],
+    "set_flags": {}
+}

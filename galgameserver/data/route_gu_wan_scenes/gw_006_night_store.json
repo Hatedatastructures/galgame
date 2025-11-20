@@ -1,0 +1,81 @@
+﻿{
+    "scene_id":  "gw_006_night_store",
+    "title":  "夜访茶仓",
+    "location":  "后院茶仓",
+    "time_of_day":  "夜",
+    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "char_image":  "assets/char/char_gu_wan_firm.png",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "夜深露冷，小心脚下。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我熟路。先生跟我。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "灯要遮些，免得惊人。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我把灯罩上。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "仓门封印在此。你看这角。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "印泥有翻动痕。又重新敲过。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "说明有人来过。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "脚印往侧窗。那里有空隙。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "侧窗封条完好，空隙不宽。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "可用细竹探。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "今夜不试。先记痕迹。",
+                          "emotion":  "soft"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "查看仓单与封印",
+                        "next":  "gw_008_seal_check"
+                    },
+                    {
+                        "text":  "返回后室整理线索",
+                        "next":  "gw_009_clue_room"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

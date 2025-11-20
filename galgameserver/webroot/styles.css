@@ -1,0 +1,285 @@
+/*
+/**
+ * @brief `样式表` 负责游戏基础界面与动画效果
+ * @details `采用蛇形命名与中文注释` `UTF-8` `4空格缩进`
+ */
+*/
+
+:root {
+    --bg-color: #0e0e10;
+    --text-color: #f2e9e4;
+    --accent-color: #c9a86a;
+    --panel-bg: rgba(20, 20, 24, 0.85);
+    --panel-border: rgba(201, 168, 106, 0.4);
+    --hover-bg: rgba(40, 40, 44, 0.85);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Microsoft YaHei", system-ui, -apple-system, Segoe UI, Roboto, Emoji;
+}
+
+#game_container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bg_layer, #character_layer, #cg_layer {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-image: radial-gradient(1400px 700px at 50% 85%, rgba(201,168,106,0.15), rgba(14,14,16,0.9)),
+                      linear-gradient(180deg, rgba(20,20,24,0.2) 0%, rgba(14,14,16,0.8) 100%);
+}
+
+#character_layer {
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+}
+
+.char_sprite {
+    position: absolute;
+    bottom: 0;
+    width: 40vw;
+    max-width: 720px;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 220ms ease-in-out, transform 220ms ease-out;
+}
+
+.char_sprite.show {
+    opacity: 1;
+}
+
+#cg_layer {
+    pointer-events: none;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 240ms ease-in-out;
+}
+
+#ui_layer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+}
+
+#name_plate {
+    align-self: flex-start;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    backdrop-filter: blur(4px);
+}
+
+#dialogue_box {
+    min-height: 120px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    padding: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+#dialogue_box:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 6px 16px var(--shadow-color);
+}
+
+#choice_list {
+    list-style: none;
+    margin: 12px 0 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+}
+
+#choice_list li {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 200ms ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    backdrop-filter: blur(4px);
+}
+
+#choice_list li:hover {
+    background: var(--hover-bg);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+#control_bar {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+#control_bar button {
+    background: var(--panel-bg);
+    color: var(--text-color);
+    border: 1px solid var(--panel-border);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+#control_bar button:hover {
+    background: var(--hover-bg);
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+#control_bar button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px var(--shadow-color);
+}
+
+.panel {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    width: 360px;
+    min-height: 180px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px var(--shadow-color);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+}
+
+.hidden { display: none; }
+
+#settings_panel label {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+#settings_panel input[type="range"] {
+    width: 100%;
+    margin-top: 8px;
+    height: 4px;
+    background: var(--panel-border);
+    border-radius: 2px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+#settings_panel input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+#settings_panel input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+#btn_settings_close {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 16px;
+    transition: all 200ms ease;
+}
+
+#btn_settings_close:hover {
+    background: #d4b47a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.fade_in {
+    animation: fade_in_keyframes 320ms ease-out forwards;
+}
+
+@keyframes fade_in_keyframes {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 添加打字机效果 */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* 添加闪烁光标 */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* 添加按钮呼吸效果 */
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+#dialogue_box.typing {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#dialogue_box.typing::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: var(--accent-color);
+}
+
+#control_bar button.auto_active {
+    animation: breathe 2s ease-in-out infinite;
+    background: rgba(201, 168, 106, 0.2);
+    border-color: var(--accent-color);
+}

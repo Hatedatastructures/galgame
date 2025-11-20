@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>古风Galgame - 顾晚线</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div id="game_container">
+            <div id="bg_layer"></div>
+            <div id="cg_layer"></div>
+            <div id="character_layer"></div>
+            <div id="ui_layer">
+                <div id="name_plate"></div>
+                <div id="dialogue_box"></div>
+                <ul id="choice_list"></ul>
+                <div id="control_bar">
+                    <button id="btn_auto">自动</button>
+                    <button id="btn_skip">快进</button>
+                    <button id="btn_backlog">日志</button>
+                    <button id="btn_save">存档</button>
+                    <button id="btn_load">读档</button>
+                    <button id="btn_settings">设置</button>
+                    <button id="btn_export_json">导出JSON</button>
+                </div>
+            </div>
+
+            <div id="backlog_panel" class="panel hidden"></div>
+            <div id="settings_panel" class="panel hidden">
+                <label>
+                    文本速度
+                    <input type="range" id="text_speed_range" min="10" max="60" value="30" />
+                </label>
+                <label>
+                    背景音乐
+                    <input type="range" id="bgm_volume_range" min="0" max="1" step="0.05" value="0.6" />
+                </label>
+                <label>
+                    音效
+                    <input type="range" id="se_volume_range" min="0" max="1" step="0.05" value="0.8" />
+                </label>
+                <button id="btn_settings_close">关闭</button>
+            </div>
+        </div>
+
+        <script src="state.js"></script>
+        <script src="router.js"></script>
+        <script src="script_loader.js"></script>
+        <script src="placeholder_images.js"></script>
+        <script src="audio_manager.js"></script>
+        <script src="renderer.js"></script>
+        <script src="save_manager.js"></script>
+        <script src="engine.js"></script>
+    </body>
+    </html>
