@@ -22,6 +22,18 @@ function render_current_line() {
     const line_obj = scene.dialogues?.[game_state.current_dialogue_index];
     if (!line_obj) { return; }
 
+    // 动态立绘：若未使用多立绘，按角色`emotion`从`route_metadata`默认立绘选择
+    if (!(Array.isArray(scene.char_images) && scene.char_images.length > 0)) {
+        const speaker_id = line_obj.speaker;
+        const emotion = line_obj.emotion;
+        const portraits = route_metadata?.characters?.[speaker_id]?.default_portraits;
+        const url = portraits && (emotion ? portraits[emotion] : undefined);
+        if (url) {
+            preload_and_apply_character(url);
+            game_state.current_char = url;
+        }
+    }
+
     name_plate_el.textContent = format_speaker_name(line_obj.speaker);
     typewrite_text(dialogue_box_el, line_obj.line, game_state.settings.text_speed);
 
@@ -66,11 +78,8 @@ function typewrite_text(el, text, speed) {
  * @returns {string}
  */
 function format_speaker_name(speaker) {
-    switch (speaker) {
-        case "gu_wan": return "顾晚";
-        case "lin_qing_he": return "林清河";
-        default: return speaker || "";
-    }
+    const display = route_metadata?.characters?.[speaker]?.display_name;
+    return display || (speaker || "");
 }
 
 /**

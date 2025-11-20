@@ -13,67 +13,66 @@ let route_metadata = null;
  * @returns {Promise<void>}
  */
 async function load_script_from_markdown() {
-    // 优先走后端接口，其次走静态JSON，最后回退到MD
-    const urls_to_try = ["./data/route_gu_wan.json", "data/route_gu_wan.json", "../data/route_gu_wan.json", "/data/route_gu_wan.json", "/api/route", "../plot.md", "./plot.md"];
+    const urls_to_try = ["./data/route_gu_wan.json", "/data/route_gu_wan.json", "data/route_gu_wan.json"];
     let md_text = null;
     let json_text = null;
     for (const url of urls_to_try) {
         try {
             const response = await fetch(url);
             if (response.ok) {
-                const ct = response.headers.get("content-type") || "";
-                if (ct.includes("application/json")) {
-                    json_text = await response.text();
+                const text = await response.text();
+                if (url.toLowerCase().endsWith(".json")) {
+                    json_text = text;
                 } else {
-                    md_text = await response.text();
+                    md_text = text;
                 }
                 break;
             }
         } catch (e) {
-            // 文件协议下可能报错，继续尝试下一个URL
         }
     }
 
     if (json_text) {
         try {
             const data = JSON.parse(json_text);
+            route_metadata = {
+                route_id: data.route_id,
+                title: data.title,
+                author: data.author,
+                schema_version: data.schema_version,
+                emotions_enum: data.emotions_enum,
+                characters: data.characters,
+                assets_manifest: data.assets_manifest,
+                dialogue_target_count: data.dialogue_target_count,
+                scene_target_count: data.scene_target_count,
+                constants: data.constants
+            };
             if (Array.isArray(data.scenes)) {
-                // 记录顶层元数据
-                route_metadata = {
-                    route_id: data.route_id,
-                    title: data.title,
-                    author: data.author,
-                    schema_version: data.schema_version,
-                    emotions_enum: data.emotions_enum,
-                    characters: data.characters,
-                    assets_manifest: data.assets_manifest,
-                    dialogue_target_count: data.dialogue_target_count,
-                    scene_target_count: data.scene_target_count,
-                    constants: data.constants
-                };
                 for (const s of data.scenes) { register_scene(s); }
-                return true;
             }
+            const char_urls = ["./data/characters.json", "/data/characters.json", "data/characters.json"];
+            for (const cu of char_urls) {
+                try {
+                    const r = await fetch(cu);
+                    if (r.ok) {
+                        const dict = await r.json();
+                        const base = (typeof route_metadata.characters === "object" && route_metadata.characters) ? route_metadata.characters : {};
+                        for (const k in dict) {
+                            if (Object.prototype.hasOwnProperty.call(dict, k)) {
+                                base[k] = { ...(base[k] || {}), ...dict[k] };
+                                const bp = base[k].default_portraits || {};
+                                const np = (dict[k] && dict[k].default_portraits) ? dict[k].default_portraits : {};
+                                base[k].default_portraits = { ...bp, ...np };
+                            }
+                        }
+                        route_metadata.characters = base;
+                        break;
+                    }
+                } catch {}
+            }
+            return true;
         } catch (e) {
             console.error("解析JSON失败", e);
-        }
-    }
-
-    if (md_text) {
-        const scene_blocks = extract_scene_blocks(md_text);
-        let ok_count = 0;
-        for (const block of scene_blocks) {
-            try {
-                const scene_obj = JSON.parse(block);
-                register_scene(scene_obj);
-                ok_count++;
-            } catch (e) {
-                console.error("解析场景失败", e, block.substring(0, 120));
-            }
-        }
-        if (ok_count > 0) {
-            augment_all_scenes_dialogues(100);
-            return true;
         }
     }
 
@@ -107,7 +106,7 @@ function register_fallback_scenes() {
         location: "系统",
         time_of_day: "任意",
         dialogues: [
-            { speaker: "系统", line: "未能加载剧情文件`plot.md`。请确保从`webroot/index.html`的上一级目录存在`plot.md`，或使用本地服务器打开页面。", emotion: "calm" },
+            { speaker: "系统", line: "未能加载剧情文件`data/route_gu_wan.json`。请确认`webroot/data`目录存在并可被HTTP服务访问。", emotion: "calm" },
             { speaker: "系统", line: "你仍可继续体验演示场景。", emotion: "calm" }
         ],
         choices: [
@@ -195,11 +194,18 @@ function generate_filler_line(location, idx) {
  * @returns {Promise<object|null>}
  */
 async function fetch_scene_json_from_server(scene_id) {
-    try {
-        const resp = await fetch(`/api/scene/${scene_id}`);
-        if (!resp.ok) return null;
-        return await resp.json();
-    } catch { return null; }
+    const candidates = [
+        `./data/route_gu_wan_scenes/${scene_id}.json`,
+        `/data/route_gu_wan_scenes/${scene_id}.json`,
+        `data/route_gu_wan_scenes/${scene_id}.json`
+    ];
+    for (const url of candidates) {
+        try {
+            const resp = await fetch(url);
+            if (resp.ok) { return await resp.json(); }
+        } catch { }
+    }
+    return null;
 }
 
 async function import_route_from_file(file) {

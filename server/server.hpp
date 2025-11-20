@@ -330,7 +330,7 @@ private:
     if (target == "/api/route")
     {
       auto root = std::filesystem::weakly_canonical(std::filesystem::path(web_root));
-      auto full = std::filesystem::weakly_canonical(root / "../data/route_gu_wan.json");
+      auto full = std::filesystem::weakly_canonical(root / "data/route_gu_wan.json");
       std::string body = read_file_cached(full);
       if (body.empty()) return make_404_response(keep);
       return make_ok_json(std::move(body));
@@ -340,10 +340,9 @@ private:
     if (target.starts_with("/api/scene/"))
     {
       std::string id = target.substr(std::string("/api/scene/").size());
-      // 基础校验，拒绝路径穿越
       if (id.find("..") != std::string::npos) return make_404_response(keep);
       auto root = std::filesystem::weakly_canonical(std::filesystem::path(web_root));
-      auto full = std::filesystem::weakly_canonical(root / ("../data/route_gu_wan_scenes/" + id + ".json"));
+      auto full = std::filesystem::weakly_canonical(root / ("data/route_gu_wan_scenes/" + id + ".json"));
       std::string body = read_file_cached(full);
       if (body.empty()) return make_404_response(keep);
       return make_ok_json(std::move(body));
@@ -352,7 +351,7 @@ private:
     if (target.starts_with("/data/"))
     {
       auto root = std::filesystem::weakly_canonical(std::filesystem::path(web_root));
-      auto data_root = std::filesystem::weakly_canonical(root / "../data");
+      auto data_root = std::filesystem::weakly_canonical(root / "data");
       auto full = std::filesystem::weakly_canonical(data_root / target.substr(6));
       std::string data_root_str = data_root.string();
       std::string full_str = full.string();
@@ -385,14 +384,6 @@ private:
       return res;
     }
 
-    if (target == "/plot.md")
-    {
-      auto root = std::filesystem::weakly_canonical(std::filesystem::path(web_root));
-      auto full = std::filesystem::weakly_canonical(root / "../plot.md");
-      auto res = make_static_response(full.string(), keep);
-      res.base().set(http::field::access_control_allow_origin, "*");
-      return res;
-    }
 
     std::string rel;
     if (target == "/" || target == "/index.html")

@@ -24,14 +24,25 @@ function save_to_slot(slot_id) {
  * @brief `从槽读取`
  * @param {number} slot_id `槽位ID`
  */
-function load_from_slot(slot_id) {
+async function load_from_slot(slot_id) {
     const raw = localStorage.getItem(SAVE_KEY_PREFIX + slot_id);
     if (!raw) { return false; }
     try {
         const payload = JSON.parse(raw);
-        game_state.current_scene_id = payload.current_scene_id;
-        game_state.current_dialogue_index = payload.current_dialogue_index;
-        game_state.variables = payload.variables;
+        const scene_id = typeof payload.current_scene_id === "string" ? payload.current_scene_id : "";
+        let scene = get_scene(scene_id);
+        if (!scene) {
+            try {
+                const fetched = await fetch_scene_json_from_server(scene_id);
+                if (fetched) { register_scene(fetched); scene = get_scene(scene_id); }
+            } catch { }
+        }
+        if (!scene) { return false; }
+        const max_idx = Math.max(0, (scene.dialogues?.length || 0) - 1);
+        const idx = Number.isFinite(payload.current_dialogue_index) ? Math.max(0, Math.min(payload.current_dialogue_index, max_idx)) : 0;
+        game_state.current_scene_id = scene_id;
+        game_state.current_dialogue_index = idx;
+        game_state.variables = (payload.variables && typeof payload.variables === "object") ? payload.variables : game_state.variables;
         return true;
     } catch {
         return false;
