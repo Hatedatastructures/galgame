@@ -1,0 +1,45 @@
+标题：灯会背景图（夜，热闹但虚化）
+
+正向提示词：
+古风 花灯市集, 动漫风格, galgame背景, cel shading, 干净线条, 写意氛围, 灯笼密布`paper lanterns`, 人群虚化`bokeh crowd`, 红金色调, 夜景深度, 电影级景深, 光斑`bokeh`, 高细节, 画面整洁
+
+风格标签：anime style, guofeng festival, cinematic night, soft bloom, crisp lineart, colorful lanterns, shallow depth of field
+
+镜头与构图：
+- 视角：站立视角略仰；三分构图；灯笼层层递进形成纵深
+- 镜头：35mm 等效；中远景；上部密集光斑，下部留空适配UI；人群散焦不抢主体
+- 焦点：近处灯笼与旗帜形成框景
+
+色彩与调色：
+- 调色板：红`#b8402a`、金`#c9a86a`、夜蓝`#0e141b`、木褐`#4a3725`、雾灰`#96a3b0`
+- 红金主色，背景降饱和；光斑色彩有层次
+
+材质关键字：
+- `paper lantern texture`、`wood frame`、`fabric banner`
+
+细节要求：
+- 灯笼大小随距离变化合理；线条干净不抖动；人群仅作彩色斑点与轮廓
+
+负面提示词：
+lowres, bad perspective, distorted, watermark, logo, text, nsfw explicit, porn, underage, child, teen
+
+迭代建议：
+- 若人群过度清晰，增强`bokeh crowd`与`shallow depth of field`；若画面太杂，加入`clean composition`关键词。
+
+构图说明：
+中远景；灯笼层层递进形成纵深；人群做散焦处理，避免干扰对白区域；画面上部密集光斑，下部留空适配UI。
+
+色彩与光影：
+红金主色（红#b8402a 金#c9a86a），背景降饱和；光斑和景深明显；整体对比适中。
+
+材质与质感：
+纸灯笼、绳索、木架细节可见；边缘轻微软化。
+
+生成参数建议（SD系）：
+steps 34, CFG 8.0, sampler DPM++ 2M Karras, size 1920x1080, sRGB, PNG/JPG
+
+生成参数建议（MJ系）：
+--ar 16:9 --v 6.0 --style raw --quality 1
+
+输出文件名：
+bg_lantern_festival_01.png

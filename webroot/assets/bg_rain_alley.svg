@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <!--
+        /**
+         * @brief `雨巷背景占位图`
+         * @details `古风氛围` `灰蓝色调` `檐与雨线`
+         */
+    -->
+    <defs>
+        <linearGradient id="sky_grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1c2430"/>
+            <stop offset="100%" stop-color="#0e141b"/>
+        </linearGradient>
+        <linearGradient id="lamp_grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c9a86a"/>
+            <stop offset="100%" stop-color="#a07d45"/>
+        </linearGradient>
+    </defs>
+
+    <!-- 天空与地面 -->
+    <rect x="0" y="0" width="1920" height="1080" fill="url(#sky_grad)"/>
+    <rect x="0" y="820" width="1920" height="260" fill="#0b0f14"/>
+
+    <!-- 巷道墙体 -->
+    <rect x="0" y="220" width="420" height="600" fill="#11161d"/>
+    <rect x="1500" y="260" width="420" height="560" fill="#0f1318"/>
+
+    <!-- 檐口与木格 -->
+    <rect x="420" y="240" width="1080" height="36" fill="#121820"/>
+    <g opacity="0.35">
+        <rect x="520" y="300" width="180" height="240" fill="#161d26"/>
+        <rect x="800" y="300" width="180" height="240" fill="#161d26"/>
+        <rect x="1080" y="300" width="180" height="240" fill="#161d26"/>
+    </g>
+
+    <!-- 灯笼 -->
+    <circle cx="600" cy="520" r="28" fill="url(#lamp_grad)"/>
+    <circle cx="1160" cy="520" r="22" fill="url(#lamp_grad)"/>
+
+    <!-- 雨线 -->
+    <g stroke="#9fb3c7" stroke-width="2" opacity="0.25">
+        <line x1="100" y1="0" x2="80" y2="1080"/>
+        <line x1="240" y1="-50" x2="210" y2="1080"/>
+        <line x1="360" y1="-20" x2="330" y2="1080"/>
+        <line x1="520" y1="-60" x2="500" y2="1080"/>
+        <line x1="720" y1="-40" x2="700" y2="1080"/>
+        <line x1="880" y1="-70" x2="860" y2="1080"/>
+        <line x1="1040" y1="-30" x2="1020" y2="1080"/>
+        <line x1="1200" y1="-80" x2="1180" y2="1080"/>
+        <line x1="1380" y1="-20" x2="1360" y2="1080"/>
+        <line x1="1520" y1="-60" x2="1500" y2="1080"/>
+    </g>
+
+    <!-- 水面反光 -->
+    <rect x="420" y="860" width="1080" height="40" fill="#1a2028" opacity="0.35"/>
+    <rect x="420" y="910" width="1080" height="30" fill="#1a2028" opacity="0.25"/>
+</svg>
