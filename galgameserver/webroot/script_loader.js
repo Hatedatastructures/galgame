@@ -204,3 +204,36 @@ async function fetch_scene_json_from_server(scene_id)
         return await resp.json();
     } catch { return null; }
 }
+
+async function import_route_from_file(file)
+{
+    const text = await file.text();
+    try {
+        const data = JSON.parse(text);
+        if (Array.isArray(data.scenes)) {
+            route_metadata = {
+                route_id: data.route_id,
+                title: data.title,
+                author: data.author,
+                schema_version: data.schema_version,
+                emotions_enum: data.emotions_enum,
+                characters: data.characters,
+                assets_manifest: data.assets_manifest,
+                dialogue_target_count: data.dialogue_target_count,
+                scene_target_count: data.scene_target_count,
+                constants: data.constants
+            };
+            for (const s of data.scenes) { register_scene(s); }
+            return true;
+        }
+    } catch {}
+    const scene_blocks = extract_scene_blocks(text);
+    if (scene_blocks.length > 0) {
+        for (const block of scene_blocks) {
+            try { register_scene(JSON.parse(block)); } catch {}
+        }
+        augment_all_scenes_dialogues(100);
+        return true;
+    }
+    return false;
+}

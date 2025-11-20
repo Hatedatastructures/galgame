@@ -23,6 +23,8 @@ const btn_continue_game_el = document.getElementById("btn_continue_game");
 const btn_settings_menu_el = document.getElementById("btn_settings_menu");
 const btn_exit_el = document.getElementById("btn_exit");
 const btn_load_menu_el = document.getElementById("btn_load_menu");
+const btn_import_local_el = document.getElementById("btn_import_local");
+const route_file_input_el = document.getElementById("route_file_input");
 const theme_select_el = document.getElementById("theme_select");
 const control_bar_wrapper_el = document.getElementById("control_bar_wrapper");
 const blur_range_el = document.getElementById("blur_range");
@@ -32,16 +34,17 @@ const blur_range_el = document.getElementById("blur_range");
  */
 async function init_engine()
 {
-    // 主菜单阶段：只加载脚本+绑定，不跑剧情
     set_loading(true);
-    await load_script_from_markdown();
-    bind_controls();
-    hide_control_bar(); // 一定隐藏
-    // 确保主菜单阶段隐藏角色层/对话层/日志面板
-    document.getElementById("character_layer").classList.add("hidden");
-    document.getElementById("dialogue_layer").classList.add("hidden");
-    backlog_panel_el.classList.add("hidden");
-    set_loading(false);
+    try {
+        await load_script_from_markdown();
+        bind_controls();
+        hide_control_bar();
+        document.getElementById("character_layer").classList.add("hidden");
+        document.getElementById("dialogue_layer").classList.add("hidden");
+        backlog_panel_el.classList.add("hidden");
+    } finally {
+        set_loading(false);
+    }
 }
 
 /**
@@ -50,8 +53,7 @@ async function init_engine()
 async function start_first_scene()
 {
     set_loading(true);
-    // 默认场景
-    const scene_id = game_state.current_scene_id || "gw_000_fallback_intro";
+    const scene_id = pick_start_scene_id();
     // 应用首屏视觉
     apply_scene_visuals({
         bg_image: "assets/bg/bg_teahouse_01.webp",
@@ -64,6 +66,13 @@ async function start_first_scene()
     if (backlog_list_el) { backlog_list_el.innerHTML = ""; }
     await go_to_scene(scene_id);
     set_loading(false);
+}
+
+function pick_start_scene_id()
+{
+    if (get_scene(game_state.current_scene_id)) { return game_state.current_scene_id; }
+    for (const [sid] of scene_index_map.entries()) { return sid; }
+    return "gw_000_fallback_intro";
 }
 
 /**
@@ -277,61 +286,45 @@ function apply_stats_delta(delta) {
  */
 function bind_controls() {
     document.addEventListener("click", (ev) => {
-        if (ev.target.id === "dialogue_box") {
-            advance_dialogue();
-        }
+        if (ev.target && ev.target.id === "dialogue_box") { advance_dialogue(); }
     });
-
-    btn_auto_el.addEventListener("click", () => {
+    if (btn_auto_el) btn_auto_el.addEventListener("click", () => {
         game_state.auto_mode_enabled = !game_state.auto_mode_enabled;
         btn_auto_el.classList.toggle("auto_active", game_state.auto_mode_enabled);
         btn_auto_el.textContent = game_state.auto_mode_enabled ? "自动中" : "自动";
     });
-    btn_skip_el.addEventListener("click", () => {
+    if (btn_skip_el) btn_skip_el.addEventListener("click", () => {
         game_state.skip_mode_enabled = !game_state.skip_mode_enabled;
         btn_skip_el.classList.toggle("auto_active", game_state.skip_mode_enabled);
         btn_skip_el.textContent = game_state.skip_mode_enabled ? "快进中" : "快进";
     });
-    btn_backlog_el.addEventListener("click", () => {
-        backlog_panel_el.classList.toggle("hidden");
-        refresh_backlog_panel();
-    });
-    btn_save_el.addEventListener("click", () => save_to_slot(1));
-    btn_load_el.addEventListener("click", () => {
-        if (load_from_slot(1)) {
-            go_to_scene(game_state.current_scene_id);
-        }
-    });
-    btn_settings_el.addEventListener("click", () => settings_panel_el.classList.remove("hidden"));
-    btn_settings_close_el.addEventListener("click", () => settings_panel_el.classList.add("hidden"));
-    btn_backlog_close_el.addEventListener("click", () => backlog_panel_el.classList.add("hidden"));
-    btn_export_json_el.addEventListener("click", export_route_json);
-
+    if (btn_backlog_el) btn_backlog_el.addEventListener("click", () => { backlog_panel_el.classList.toggle("hidden"); refresh_backlog_panel(); });
+    if (btn_save_el) btn_save_el.addEventListener("click", () => save_to_slot(1));
+    if (btn_load_el) btn_load_el.addEventListener("click", () => { if (load_from_slot(1)) { go_to_scene(game_state.current_scene_id); } });
+    if (btn_settings_el) btn_settings_el.addEventListener("click", () => settings_panel_el.classList.remove("hidden"));
+    if (btn_settings_close_el) btn_settings_close_el.addEventListener("click", () => settings_panel_el.classList.add("hidden"));
+    if (btn_backlog_close_el) btn_backlog_close_el.addEventListener("click", () => backlog_panel_el.classList.add("hidden"));
+    if (btn_export_json_el) btn_export_json_el.addEventListener("click", export_route_json);
     const text_speed_range_el = document.getElementById("text_speed_range");
     const bgm_volume_range_el = document.getElementById("bgm_volume_range");
     const se_volume_range_el = document.getElementById("se_volume_range");
-    text_speed_range_el.addEventListener("input", () => game_state.settings.text_speed = Number(text_speed_range_el.value));
-    bgm_volume_range_el.addEventListener("input", () => { game_state.settings.bgm_volume = Number(bgm_volume_range_el.value); audio_manager.update_volumes(); });
-    se_volume_range_el.addEventListener("input", () => { game_state.settings.se_volume = Number(se_volume_range_el.value); audio_manager.update_volumes(); });
-    if (theme_select_el) {
-        theme_select_el.addEventListener("change", () => {
-            const val = theme_select_el.value || "dark";
-            game_state.settings.theme = val;
-            localStorage.setItem("gw_theme", val);
-            apply_theme(val);
-        });
-    }
-    // 键盘快捷键
+    if (text_speed_range_el) text_speed_range_el.addEventListener("input", () => game_state.settings.text_speed = Number(text_speed_range_el.value));
+    if (bgm_volume_range_el) bgm_volume_range_el.addEventListener("input", () => { game_state.settings.bgm_volume = Number(bgm_volume_range_el.value); audio_manager.update_volumes(); });
+    if (se_volume_range_el) se_volume_range_el.addEventListener("input", () => { game_state.settings.se_volume = Number(se_volume_range_el.value); audio_manager.update_volumes(); });
+    if (theme_select_el) theme_select_el.addEventListener("change", () => {
+        const val = theme_select_el.value || "dark";
+        game_state.settings.theme = val;
+        localStorage.setItem("gw_theme", val);
+        apply_theme(val);
+    });
     document.addEventListener("keydown", (ev) => {
-        const k = ev.key.toLowerCase();
+        const k = (ev.key || "").toLowerCase();
         if (k === "enter" || k === " ") { advance_dialogue(); }
         if (k === "b") { backlog_panel_el.classList.toggle("hidden"); refresh_backlog_panel(); }
         if (k === "s") { settings_panel_el.classList.toggle("hidden"); }
-        if (k === "a") { btn_auto_el.click(); }
-        if (k === "k") { btn_skip_el.click(); }
-        if (/^[1-9]$/.test(k)) {
-            const idx = Number(k) - 1; choose_option(idx);
-        }
+        if (k === "a") { if (btn_auto_el) btn_auto_el.click(); }
+        if (k === "k") { if (btn_skip_el) btn_skip_el.click(); }
+        if (/^[1-9]$/.test(k)) { const idx = Number(k) - 1; choose_option(idx); }
     });
 }
 
@@ -392,6 +385,19 @@ async function init_boot() {
     if (btn_load_menu_el) { btn_load_menu_el.addEventListener("click", continue_game); }
     btn_settings_menu_el.addEventListener("click", () => settings_panel_el.classList.remove("hidden"));
     btn_exit_el.addEventListener("click", () => window.close());
+    if (btn_import_local_el && route_file_input_el) {
+        btn_import_local_el.addEventListener("click", () => route_file_input_el.click());
+        route_file_input_el.addEventListener("change", async () => {
+            const f = route_file_input_el.files && route_file_input_el.files[0];
+            if (!f) { return; }
+            const ok = await import_route_from_file(f);
+            if (ok) {
+                main_menu_el.classList.add("hidden");
+                show_control_bar();
+                await start_first_scene();
+            }
+        });
+    }
 
     // 遮罩模糊度实时调节
     blur_range_el.addEventListener("input", e =>
@@ -415,11 +421,13 @@ async function init_boot() {
 /**
  * @brief `开始新游戏`
  */
-function start_new_game()
+async function start_new_game()
 {
     main_menu_el.classList.add("hidden");
     show_control_bar();
-    start_first_scene(); // 真正进剧情
+    const loaded = await load_script_from_markdown();
+    if (!loaded) { register_fallback_scenes(); }
+    await start_first_scene();
 }
 
 /**
