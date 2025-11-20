@@ -1,0 +1,81 @@
+{
+    "scene_id":  "gw_100_final_he",
+    "title":  "结局：永远（HE）",
+    "location":  "茶阁",
+    "time_of_day":  "永远",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
+    "cg_image":  "assets/cg/cg_gw_forever_01.webp",
+    "cg_audio":  "assets/cg/cg_gw_forever_01.mp3",
+    "char_image":  "",
+    "preconditions":  {
+                          "final_he":  1
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "清河，永远不远，就在身边。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "身边是你，永远是你。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "是你，是我，是我们。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我们是我们，最好听的称谓。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "称谓是表，真心是里。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "里外都是你，满满当当。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "满满是你，当当也是你。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "你填满我，我填满你。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "填满不溢出，刚好合适。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "合适是缘，缘来不散。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "不散是诺，诺守一生。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "一生是你，足矣。",
+                          "emotion":  "soft"
+                      }
+                  ],
+    "choices":  [
+
+                ],
+    "set_flags":  {
+
+                  }
+}

@@ -1,0 +1,309 @@
+{
+    "scene_id": "gw_060_r18_tender_night",
+    "title": "温柔乡（R-18）",
+    "location": "茶阁后室",
+    "time_of_day": "深夜",
+    "bg_image": "assets/bg/bg_teahouse_01.webp",
+    "cg_image": "assets/cg/cg_gw_tender_night_01.webp",
+    "cg_audio": "assets/cg/cg_gw_tender_night_01.mp3",
+    "char_image": "",
+    "preconditions": {
+        "gu_wan_qin_mi_du": "\u003e=95",
+        "consent_confirmed": 1
+    },
+    "dialogues": [
+        {
+            "speaker": "lin_qing_he",
+            "line": "顾晚，今夜月色真美。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "月色美，你更美。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "嘴甜，是不是抹了蜜？",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "抹了，专门为你准备的蜜。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "让我尝尝，看甜到什么程度。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "尝吧，甜到心里。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "确实甜，甜到发腻。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "腻也不许吐，要全部收下。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "收下便收下，谁让我喜欢。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "喜欢就好，我怕你嫌弃。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "嫌弃是错，我不错。",
+            "emotion": "firm"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "不错就好，我放心了。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "放心，然后放心爱我。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "爱，正在发生。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "发生得刚好，不早不晚。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "刚好遇见你，是我幸运。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "幸运是缘，缘来是你。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "是你，是缘，是命中的注定。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "注定也好，偶然也罢，都是美。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "美到让我窒息，让我沉醉。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "窒息要救，沉醉无需。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "救我出窒息，入你温柔乡。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "温柔乡是港，让你停泊。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "停泊永久，不再漂泊。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "漂泊有终，港湾有灯。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "灯是你，照亮我归途。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "归途有路，路通我心。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "通往你心，是我毕生追求。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "追求有果，果甜如蜜。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "蜜是你，甜是我，甜到心里。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "心里有你，满满当当。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "当当满满，都是你。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "是我便好，不许别人。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "别人是客，你是主人。",
+            "emotion": "firm"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "主人要做主，做主我的心。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "你的心，我主定了。",
+            "emotion": "firm"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "主定便主定，谁让我愿意。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "愿意是钥匙，打开幸福门。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "幸福门内，是我们天地。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "天地宽广，容得下我们爱。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "爱有天地，天地有我们。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "我们是世界，世界是我们。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "世界太大，我们只要彼此。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "彼此足够，填满整个世界。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "世界因你而满，因我而暖。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "暖到心里，暖到梦里。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "梦里是你，心里是你，全部都是你。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "你也是我，我也是你，我们不分。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "不分最好，分也分不开。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "分不开，粘在一起，永不分离。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "分离是痛，我们不要。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "不要分离，要永远在一起。",
+            "emotion": "firm"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "在一起，不分离，直到永远。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "永远不远，就在眼前。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "眼前是你，永远是你。",
+            "emotion": "soft"
+        }
+    ],
+    "choices": [
+        {
+            "text": "温柔入眠",
+            "set_flags": {
+                "gu_wan_qin_mi_du": "+20",
+                "tender_night_passed": 1
+            },
+            "next": "gw_061_morning_after"
+        },
+        {
+            "text": "继续温存",
+            "set_flags": {
+                "gu_wan_qin_mi_du": "+25"
+            },
+            "next": "gw_062_r18_extended"
+        }
+    ],
+    "set_flags": {}
+}

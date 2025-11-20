@@ -1,0 +1,30 @@
+﻿{
+    "scene_id":  "gw_018_offer",
+    "title":  "以利示人",
+    "location":  "茶仓",
+    "time_of_day":  "午后",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "若言其名，可免小过。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "人性有端，我们留一线。",
+                          "emotion":  "gentle"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "等待回应",
+                        "next":  "gw_019_pause"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

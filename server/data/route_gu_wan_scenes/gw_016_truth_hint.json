@@ -1,0 +1,26 @@
+﻿{
+    "scene_id": "gw_016_truth_hint",
+    "title": "真相端倪",
+    "location": "边案",
+    "time_of_day": "午后",
+    "preconditions": {},
+    "dialogues": [
+        {
+            "speaker": "lin_qing_he",
+            "line": "有人以茶偿情。初三之账，或为人情账。",
+            "emotion": "calm"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "偿情……是谁？",
+            "emotion": "gentle"
+        }
+    ],
+    "choices": [
+        {
+            "text": "继续查证",
+            "next": "gw_020_probe_person"
+        }
+    ],
+    "set_flags": {}
+}

@@ -1,0 +1,41 @@
+{
+    "scene_id":  "gw_008_seal_check",
+    "title":  "封印核查",
+    "location":  "茶仓门前",
+    "time_of_day":  "夜",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "封印有翻动痕迹，却重覆敲印。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "是谁在遮掩？",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "重敲之人非外客，必是近人。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "近人……我心里已有两三个名字。",
+                          "emotion":  "gentle"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "回后室讨论",
+                        "next":  "gw_009_clue_room"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

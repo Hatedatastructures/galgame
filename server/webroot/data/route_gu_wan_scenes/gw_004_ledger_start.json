@@ -1,0 +1,82 @@
+﻿{
+    "scene_id":  "gw_004_ledger_start",
+    "title":  "旧账开卷",
+    "location":  "茶阁后室",
+    "time_of_day":  "夜",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "这一列账目，每逢初三有一笔调增。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "增额无注，恐非寻常。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我想查，却总被父亲搁下。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "今夜便查。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "先把店账与仓单并列。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "你写店账，我记仓单。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "好。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "初三、初八、十五皆有微差。初三尤重。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "若是旧客取茶，人情不记名。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "不记名之举，易生遮掩。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "走一趟仓门吧。",
+                          "emotion":  "firm"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "夜访茶仓",
+                        "set_flags":  {
+                                          "gu_wan_qin_mi_du":  "+4"
+                                      },
+                        "next":  "gw_006_night_store"
+                    },
+                    {
+                        "text":  "先做比对",
+                        "next":  "gw_007_compare"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

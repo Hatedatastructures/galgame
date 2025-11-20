@@ -1,0 +1,38 @@
+标题：顾晚·生气立绘（坚定质问）
+
+正向提示词：
+成年女性 20+, 古风, 动漫风格, galgame立绘, cel shading, 干净线条, 高细节, 透明背景, 眉眼上挑`raised brows`, 目光锐利`sharp gaze`, 唇线收紧`tight lip`, 半身像, 强对比光影`strong contrast`
+
+脸型与五官：
+- 鹅蛋脸但下颌线更利落；柳眉上挑；杏眼中双，瞳孔缩小轻微；鼻梁简化；唇色豆沙偏冷。
+
+发型与饰物：
+- 低挽髻更整洁；细银簪；丝带收束；无多余流苏。
+
+服装结构与细节：
+- 交领右衽襦、广袖略收、窄滚边；腰部双层系带结更收束；纹样减弱突出干练；
+- 可手持账本或茶仓钥匙（道具清晰不抢脸）。
+
+姿态与手部：
+- 身体直立，肩部外展轻微；右手持道具，左手在腰侧；手指形态自然。
+
+线条与上色：
+- `crisp lineart`、`hard edge shadow`；`cel shading`硬边更明确；脸颊无腮红或极弱。
+
+负面提示词：
+lowres, bad hands, bad anatomy, extra fingers, distorted, watermark, logo, text, nsfw explicit, porn, underage, child, teen, overly sexualized, armor bikini
+
+构图说明：
+半身像；人物居中；上方可留标题位；适用于对质与抉择场景。
+
+色彩与服饰：
+茶色#c9a86a与深色对比；光影更强；背景透明。
+
+生成参数建议（SD系）：
+steps 34–36, CFG 8.0–9.0, sampler DPM++ 2M Karras, size 高度1600px, PNG透明
+
+生成参数建议（MJ系）：
+--ar 2:3 --v 6.0 --style raw --quality 1 --background transparent
+
+输出文件名：
+char_gu_wan_angry_firm.png

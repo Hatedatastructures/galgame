@@ -1,0 +1,35 @@
+{
+    "scene_id":  "gw_023_confront",
+    "title":  "石桥对质",
+    "location":  "石桥",
+    "time_of_day":  "夜半",
+    "bg_image":  "assets/bg/bg_river_dock_01.webp",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "你取茶不记名，为何？",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "请直说。",
+                          "emotion":  "calm"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "听其解释",
+                        "next":  "gw_026_explanation"
+                    },
+                    {
+                        "text":  "施压追问",
+                        "next":  "gw_027_pressure_bridge"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

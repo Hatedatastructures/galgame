@@ -1,0 +1,26 @@
+﻿{
+    "scene_id": "gw_017_source",
+    "title": "源由初现",
+    "location": "茶仓",
+    "time_of_day": "午后",
+    "preconditions": {},
+    "dialogues": [
+        {
+            "speaker": "gu_wan",
+            "line": "有人来取茶而不记名。",
+            "emotion": "calm"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "不记名，故重敲封印。",
+            "emotion": "firm"
+        }
+    ],
+    "choices": [
+        {
+            "text": "追踪不记名者",
+            "next": "gw_021_track_person"
+        }
+    ],
+    "set_flags": {}
+}

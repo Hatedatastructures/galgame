@@ -1,0 +1,83 @@
+{
+    "scene_id":  "gw_036_r18_rain_tea",
+    "title":  "雨夜茶阁（R-18）",
+    "location":  "茶阁后室",
+    "time_of_day":  "夜",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
+    "cg_image":  "assets/cg/cg_gw_rain_tea_01.webp",
+    "cg_audio":  "assets/cg/cg_gw_rain_tea_01.mp3",
+    "char_image":  "",
+    "preconditions":  {
+                          "gu_wan_qin_mi_du":  "\u003e=70",
+                          "consent_confirmed":  1
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "可以吗？",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "可以。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "灯影在木格上轻轻摇。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我以怀抱挡雨。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "你的手很暖。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "怕你冷。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "不冷。只是心跳有些乱。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "那便慢一点。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "好。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "若你不愿，随时停下。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我愿意。",
+                          "emotion":  "gentle"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "事后关怀",
+                        "set_flags":  {
+                                          "route_stability_gw":  "+10"
+                                      },
+                        "next":  "gw_037_aftercare"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

@@ -1,0 +1,45 @@
+{
+    "scene_id":  "gw_011_ask_keeper",
+    "title":  "仓管问询",
+    "location":  "茶仓侧",
+    "time_of_day":  "次日",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "封印重敲，何人所为？",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "答非所问，恐有隐瞒。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "侧窗空隙可入细竹，是否有人试过？",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "只需一句真话。",
+                          "emotion":  "firm"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "施压",
+                        "next":  "gw_014_pressure"
+                    },
+                    {
+                        "text":  "旁敲",
+                        "next":  "gw_015_side_talk"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

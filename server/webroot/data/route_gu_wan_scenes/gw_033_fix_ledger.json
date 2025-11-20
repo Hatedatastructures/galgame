@@ -1,0 +1,33 @@
+﻿{
+    "scene_id":  "gw_033_fix_ledger",
+    "title":  "正账之议",
+    "location":  "后室台案",
+    "time_of_day":  "日午",
+    "preconditions":  {
+                          "tea_debt_resolved":  1
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "人情归人情，账归账。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我愿随你正。",
+                          "emotion":  "gentle"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "共同拟订方案",
+                        "set_flags":  {
+                                          "gu_wan_qin_mi_du":  "+6"
+                                      },
+                        "next":  "gw_035_confirm_relation"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

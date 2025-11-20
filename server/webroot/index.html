@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>青霭Galgame · 顾晚线</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="game_container">
+        <!-- 转场遮罩 -->
+        <div id="transition_overlay" class="transition_overlay"></div>
+
+        <!-- 背景/立绘/CG 层 -->
+        <div id="bg_layer"></div>
+        <div id="cg_layer"></div>
+        <div id="character_layer" class="hidden"></div>
+
+        <!-- 对话层 -->
+        <div id="dialogue_layer" class="hidden">
+            <div id="name_plate"></div>
+            <div id="dialogue_box"></div>
+            <ul id="choice_list"></ul>
+        </div>
+
+        <!-- 顶部控制栏 -->
+        <div id="control_bar_wrapper" class="control_bar_wrapper hidden">
+            <div id="control_bar" class="ui_shine">
+                <button id="btn_auto">自动</button>
+                <button id="btn_skip">快进</button>
+                <button id="btn_backlog">日志</button>
+                <button id="btn_save">存档</button>
+                <button id="btn_load">读档</button>
+                <button id="btn_settings">设置</button>
+                <button id="btn_export_json">导出</button>
+            </div>
+        </div>
+
+        <!-- 侧边设置面板 -->
+        <div id="settings_panel" class="panel hidden">
+            <label>
+                文本速度
+                <input type="range" id="text_speed_range" min="10" max="60" value="30" />
+            </label>
+            <label>
+                背景音乐
+                <input type="range" id="bgm_volume_range" min="0" max="1" step="0.05" value="0.6" />
+            </label>
+            <label>
+                音效
+                <input type="range" id="se_volume_range" min="0" max="1" step="0.05" value="0.8" />
+            </label>
+            <label>
+                主题
+                <select id="theme_select">
+                    <option value="light">天青</option>
+                    <option value="dark">青黛</option>
+                </select>
+            </label>
+            <label>
+                遮罩模糊度
+                <input type="range" id="blur_range" min="0" max="30" value="12" />
+            </label>
+            <button id="btn_settings_close">关闭</button>
+        </div>
+
+        <!-- 主菜单 -->
+        <div id="main_menu" class="panel_full">
+            <!-- 顶部霓虹标题 -->
+            <div class="title_area">
+
+            </div>
+
+            <!-- 左侧按钮列 -->
+            <div class="menu_sidebar">
+                <button id="btn_start_game" class="gal_btn">开始游戏</button>
+                <button id="btn_continue_game" class="gal_btn">继续游戏</button>
+                <button id="btn_settings_menu" class="gal_btn">游戏设置</button>
+                <button id="btn_load_menu" class="gal_btn">读取存档</button>
+                <button id="btn_import_local" class="gal_btn">加载本地剧情</button>
+                <button id="btn_exit" class="gal_btn">退出游戏</button>
+            </div>
+        </div>
+
+        <!-- 加载遮罩 -->
+        <div id="loading_overlay" class="panel_full hidden">
+            <div class="menu_logo">加载中<dot></dot>
+            </div>
+        </div>
+
+        <!-- 日志面板 -->
+        <div id="backlog_panel" class="glass_panel hidden">
+            <div class="backlog_header">
+                <span>对话历史</span>
+                <button id="btn_backlog_close">✕</button>
+            </div>
+            <ul id="backlog_list"></ul>
+        </div>
+        <input id="route_file_input" type="file" accept=".json,.md" class="visually_hidden" />
+    </div>
+
+    <noscript>请开启 JavaScript 后刷新页面</noscript>
+
+    <script src="state.js"></script>
+    <script src="router.js"></script>
+    <script src="script_loader.js"></script>
+    <script src="placeholder_images.js"></script>
+    <script src="audio_manager.js"></script>
+    <script src="renderer.js"></script>
+    <script src="save_manager.js"></script>
+    <script src="engine.js"></script>
+    <script>
+        // 首次点击解锁音频 + 立即初始化（脚本在文档末尾，DOM已就绪）
+        (function () {
+            function unlock_audio() {
+                try { audio_manager.init_audio(); } catch { }
+                document.removeEventListener("click", unlock_audio);
+            }
+            document.addEventListener("click", unlock_audio, { once: true });
+            try { init_engine(); } catch { }
+            try { init_boot(); } catch { }
+        })();
+    </script>
+</body>
+
+</html>

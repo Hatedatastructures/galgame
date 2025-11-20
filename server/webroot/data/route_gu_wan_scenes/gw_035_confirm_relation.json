@@ -1,0 +1,79 @@
+{
+    "scene_id":  "gw_035_confirm_relation",
+    "title":  "关系确认",
+    "location":  "后室",
+    "time_of_day":  "黄昏",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
+    "char_image":  "assets/char/char_gu_wan_gentle.webp",
+    "preconditions":  {
+                          "gu_wan_qin_mi_du":  "\u003e=70"
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "清河……我愿与你并肩。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我在。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "这一路，你与我共看茶与人事。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "也共担风雨。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我有些话，迟迟未说。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "你说。夜正好听。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "我怕自己不够坚硬，怕在你眼里只是温柔。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "温柔不是软弱。是选择不伤人。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "那你也要答应我，不要独自扛。",
+                          "emotion":  "gentle"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "我答应。",
+                          "emotion":  "soft"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "彼此确认",
+                        "set_flags":  {
+                                          "consent_confirmed":  1
+                                      },
+                        "next":  "gw_036_r18_rain_tea"
+                    },
+                    {
+                        "text":  "再谈片刻",
+                        "next":  "gw_035_extend_1"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

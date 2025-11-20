@@ -1,0 +1,134 @@
+{
+    "scene_id": "gw_001_intro",
+    "title": "雨巷相遇",
+    "location": "茶馆外雨巷",
+    "time_of_day": "傍晚",
+    "bg_image": "assets/bg/bg_rain_alley_01.webp",
+    "char_image": "assets/char/char_gu_wan_default.webp",
+    "preconditions": {
+        "route_gu_wan_locked": 0
+    },
+    "dialogues": [
+        {
+            "speaker": "gu_wan",
+            "line": "今雨微寒，先生且入内避一避。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "承蒙相邀。你家茶香，似有旧识。",
+            "emotion": "calm"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "雨脚轻，檐下坐。待我烫壶清香。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "茶色如烟，雨亦如烟。江南应如是。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "先生常来此地？我似未见过。",
+            "emotion": "calm"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "近来在书院助教，偶有闲步至此。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "书院之事繁杂吧？我只懂得煮茶。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "人人有其擅长。煮茶亦需心细。",
+            "emotion": "calm"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "心细……你看雨滴落在石板缝里，总往一处汇。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "是，汇到脚边，提醒人该入内。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "那便请。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "多谢。",
+            "emotion": "calm"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "你说茶香似有旧识，是识谁？",
+            "emotion": "calm"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "识雨后初烫的香气，像某年黄昏。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "某年……我也记得一回。那时灯还不亮，父亲说茶要趁热。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "趁热。人心也是。",
+            "emotion": "calm"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "先生不冷吗？雨衣薄。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "冷得不多，风里有茶香，不觉苦。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "你会说话。茶倒会更好喝。",
+            "emotion": "gentle"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "那我便多说两句。",
+            "emotion": "soft"
+        },
+        {
+            "speaker": "gu_wan",
+            "line": "先入内。路滑。",
+            "emotion": "gentle"
+        }
+    ],
+    "choices": [
+        {
+            "text": "入内与顾晚并肩核账",
+            "set_flags": {
+                "gu_wan_qin_mi_du": "+5"
+            },
+            "next": "gw_002_tea_house"
+        },
+        {
+            "text": "明日再来",
+            "next": "gw_003_tomorrow"
+        }
+    ],
+    "set_flags": {
+        "route_gu_wan_locked": 0
+    }
+}

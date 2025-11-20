@@ -1,0 +1,59 @@
+标题：顾晚·默认立绘（端稳温柔）
+
+正向提示词：
+成年女性 20+, 古风 江南茶馆掌柜之女, 动漫风格, galgame立绘, cel shading, 干净线条, 眼睛高光`eye highlight`, 黑发低挽`low bun`+少许碎发`loose strands`, 眉眼温柔克制`gentle eyes`, 素雅浅茶色襦裙`light tea-color hanfu`+细致花纹`subtle pattern`, 手持茶盏`teacup`, 半身像, 姿态端稳, 五官比例`anime face ratio`, 皮肤光滑不写实, 高细节, 透明背景
+
+面部与表情细节：
+- 虹膜渐变与高光；睫毛清晰但不过分浓密；鼻翼简化；嘴角微弧
+
+体态与手部：
+- S形轻微曲线；右手持盏，左手自然垂于腰侧；手指细长无多指
+
+服饰与材质：
+- `hanfu fabric`、`soft fold`、`subtle embroidery`
+
+线条与上色：
+- `crisp lineart`、`thin-thick stroke`、`cel shading`主，局部`soft gradient`辅助
+
+脸型与五官（动漫风格精细）：
+- 脸型：`鹅蛋脸/瓜子脸`，下颌线柔和，颧骨不突出，面部整体偏圆润；
+- 眉型：`柳眉`，弧度自然，眉尾略下压；
+- 眼型：`杏眼`，中双眼皮，虹膜渐变高光`two specular highlights`；
+- 鼻型：`简化鼻梁`与`鼻翼轻描`，不写实；
+- 唇型：`薄厚适中`，`豆沙色`浅涂，唇线干净；
+
+发型与饰物：
+- 发型：`低挽髻`，鬓角留`碎发`两缕，整体黑发`soft shine`；
+- 发饰：`细银簪`+`浅茶色丝带`（与服装配色一致）；耳饰可无或`小型流苏耳坠`；
+
+服装结构与细节（汉服襦裙）：
+- 上衣：`交领右衽襦`，`窄襟`，`广袖`但袖口略收；领缘与袖口有`窄滚边`（木色#4a3725）；
+- 下装：`长裙`（层叠轻纱外层+棉质内层），裙摆`软褶`自然；
+- 腰部：`双层系带结`，结尾垂线至腰下`12–15cm`；
+- 纹样：`极浅云纹/叶纹`，分布在下摆与袖口，密度低，避免抢戏；
+- 质感：`hanfu fabric`（外层纱、内层棉），`subtle embroidery`仅在袖口与下摆；
+
+配色与材质规范：
+- 主色：`茶色#c9a86a`；辅色：`木色#4a3725`；点缀：`暖白#f1eee6`；
+- 面料`半哑光`，高光仅在折线与袖口，`flat skin shading`避免写实毛孔；
+
+负面提示词：
+lowres, bad hands, bad anatomy, extra fingers, distorted, watermark, logo, text, nsfw explicit, porn, underage, child, teen, overly sexualized, armor bikini
+
+迭代建议：
+- 若皮肤偏写实，加入`flat skin shading`; 若线条不够干净，提升`crisp lineart`权重。
+
+构图说明：
+半身像；右手持茶盏，左手于腰侧；目光平和，嘴角微弧；背景透明以便引擎叠加。
+
+色彩与服饰：
+主色茶色#c9a86a，辅色木色#4a3725；衣纹细致不复杂；饰物简洁。
+
+生成参数建议（SD系）：
+steps 32, CFG 7.5, sampler DPM++ 2M Karras, size 高度1600px, PNG透明背景
+
+生成参数建议（MJ系）：
+--ar 2:3 --v 6.0 --style raw --quality 1 --background transparent
+
+输出文件名：
+char_gu_wan_default.png

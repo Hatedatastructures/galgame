@@ -1,0 +1,30 @@
+﻿{
+    "scene_id":  "gw_022_night_continue",
+    "title":  "入夜续查",
+    "location":  "茶阁后室",
+    "time_of_day":  "夜深",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "今夜不休，明日或有明晰。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "与你同在。",
+                          "emotion":  "soft"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "继续比对",
+                        "next":  "gw_025_cross_check"
+                    }
+                ],
+    "set_flags":  {
+                      "gu_wan_qin_mi_du":  "+5"
+                  }
+}

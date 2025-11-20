@@ -1,0 +1,54 @@
+﻿{
+    "scene_id":  "gw_007_compare",
+    "title":  "账册比对",
+    "location":  "后室台案",
+    "time_of_day":  "夜",
+    "preconditions":  {
+
+                      },
+    "dialogues":  [
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "店账与仓单不合，初三多出茶包数。",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "若是人为，那人极近。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "此处的字迹与平日不同。",
+                          "emotion":  "soft"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "是账房写的，还是父亲改的？",
+                          "emotion":  "calm"
+                      },
+                      {
+                          "speaker":  "lin_qing_he",
+                          "line":  "走问账房，或可见端。",
+                          "emotion":  "firm"
+                      },
+                      {
+                          "speaker":  "gu_wan",
+                          "line":  "也问仓管。封印不该重敲。",
+                          "emotion":  "gentle"
+                      }
+                  ],
+    "choices":  [
+                    {
+                        "text":  "夜访茶仓确认",
+                        "next":  "gw_006_night_store"
+                    },
+                    {
+                        "text":  "记下疑点，明日询问账房",
+                        "next":  "gw_010_ask_accountant"
+                    }
+                ],
+    "set_flags":  {
+
+                  }
+}

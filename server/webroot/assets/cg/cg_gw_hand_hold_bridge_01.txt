@@ -1,0 +1,32 @@
+标题：石桥牵手CG（夜半对质后的信任）
+
+正向提示词：
+成年男女 20+, 古风 石桥夜景, 动漫风格CG, galgame氛围, cel shading, 干净线条, 两人牵手`hands interlocked`, 目光相对`eye contact`, 雨后石面`wet cobblestone`, 灯笼微光`paper lantern glow`, 高细节, 自愿
+
+镜头与构图：
+- 中近景；三分构图；桥栏形成水平线；人物居中偏右；下方留UI空间。
+
+动作与情绪：
+- 双手指间相扣；顾晚微笑克制，林清河目光柔和；姿态靠近但不拥抱。
+
+面相与服装细节（两人）：
+- 顾晚：鹅蛋脸、柳眉、杏眼中双、豆沙色唇；低挽髻+碎发两缕；交领右衽襦+长裙；袖口与领缘窄滚边；双层系带结；
+- 林清河：清瘦长脸、剑眉、细长杏眼；半束发；直衣交领右衽；窄袖；腰带系结；
+
+材质与环境：
+- `wet cobblestone`反光；`paper lantern`光晕；背景河面微波；
+
+色彩与调色：
+- 夜蓝#0e141b、木褐#4a3725、灯黄#c9a86a；冷主暖辅；光晕柔和。
+
+负面提示词：
+lowres, bad anatomy, explicit nudity, porn, groping, assault, violence, watermark, logo, text, underage, child, teen, photorealistic
+
+生成参数建议（SD系）：
+steps 34–38, CFG 7.5–8.5, sampler DPM++ 2M Karras, size 1920x1080, sRGB
+
+生成参数建议（MJ系）：
+--ar 16:9 --v 6.0 --style raw --quality 1
+
+输出文件名：
+cg_gw_hand_hold_bridge_01.png

@@ -1,0 +1,42 @@
+标题：顾晚·温柔立绘（轻羞柔和）
+
+正向提示词：
+成年女性 20+, 古风, 动漫风格, galgame立绘, cel shading, 干净线条, 高细节, 透明背景, 目光微低`downcast eyes`, 轻羞神态`bashful`, 双手合于身前`hands together`, 半身像, 灯光暖黄`warm light`, 边缘柔化`soft edges`, 皮肤平涂`flat skin shading`
+
+脸型与五官（动漫风格精细）：
+- 脸型：`鹅蛋脸`，下颌线柔和；眉型`柳眉`；眼型`杏眼`中双；
+- 虹膜带`soft gradient`与`two specular highlights`；鼻梁简化；唇色`豆沙色`偏浅；
+
+发型与饰物：
+- `低挽髻`，鬓角`碎发`两缕；`细银簪`与`浅茶色丝带`；耳饰`小型流苏耳坠`可选；
+
+服装结构与细节（汉服襦裙）：
+- 上衣：`交领右衽襦`，`窄襟`，袖型`广袖略收`，`袖口窄滚边`（木色#4a3725）；
+- 下装：`轻纱外层长裙`+`棉质内层`，裙摆`软褶`；
+- 腰部：`双层系带结`，结尾自然下垂；
+- 纹样：`浅云纹/叶纹`分布`袖口与下摆`，密度低；
+- 质感：`hanfu fabric`、`soft fold`、`subtle embroidery`；
+
+线条与上色：
+- `crisp lineart`、`thin-thick stroke`；`cel shading`为主，`soft gradient`用于脸颊与袖口；抗锯齿处理；
+
+负面提示词：
+lowres, bad hands, bad anatomy, extra fingers, distorted, watermark, logo, text, nsfw explicit, porn, underage, child, teen, overly sexualized, armor bikini, photorealistic, realistic skin texture
+
+构图说明：
+半身像；人物居中偏右；左下留`UI`文本空间；用于亲密但非露骨场景。
+
+色彩与服饰：
+暖黄灯光；茶色主调`#c9a86a`；辅色木色`#4a3725`；腮红`#e59aa0`轻度。
+
+迭代建议：
+- 若羞涩感不足，增加`bashful, shy glance`；若手部变形，提高`clean hands`或更换模型；若皮肤写实，提升`flat skin shading`权重。
+
+生成参数建议（SD系）：
+steps 32, CFG 7.5, sampler DPM++ 2M Karras, size 高度1600px, PNG透明
+
+生成参数建议（MJ系）：
+--ar 2:3 --v 6.0 --style raw --quality 1 --background transparent
+
+输出文件名：
+char_gu_wan_gentle.png
