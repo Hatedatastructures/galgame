@@ -1,31 +1,27 @@
 ﻿{
-    "scene_id":  "gw_050_ending_he",
-    "title":  "结局：灯下江南（HE）",
-    "location":  "灯会",
-    "time_of_day":  "夜",
-    "bg_image":  "assets/bg/bg_lantern_festival_01.png",
-    "cg_image":  "assets/cg/cg_gw_lantern_hug_01.png",
-    "char_image":  "",
-    "preconditions":  {
-                          "route_stability_gw":  "\u003e=10",
-                          "tea_debt_resolved":  1
-                      },
-    "dialogues":  [
-                      {
-                          "speaker":  "gu_wan",
-                          "line":  "灯下有你，江南更暖。",
-                          "emotion":  "smile"
-                      },
-                      {
-                          "speaker":  "lin_qing_he",
-                          "line":  "来日与茶，共看人间。",
-                          "emotion":  "soft"
-                      }
-                  ],
-    "choices":  [
-
-                ],
-    "set_flags":  {
-
-                  }
+    "scene_id": "gw_050_ending_he",
+    "title": "结局：灯下江南（HE）",
+    "location": "灯会",
+    "time_of_day": "夜",
+    "bg_image": "assets/bg/bg_lantern_festival_01.png",
+    "cg_image": "assets/cg/cg_gw_lantern_hug_01.png",
+    "char_image": "",
+    "preconditions": {
+        "route_stability_gw": "\u003e=10",
+        "tea_debt_resolved": 1
+    },
+    "dialogues": [
+        {
+            "speaker": "gu_wan",
+            "line": "灯下有你，江南更暖。",
+            "emotion": "smile"
+        },
+        {
+            "speaker": "lin_qing_he",
+            "line": "来日与茶，共看人间。",
+            "emotion": "soft"
+        }
+    ],
+    "choices": [],
+    "set_flags": {}
 }

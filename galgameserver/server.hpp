@@ -1,5 +1,5 @@
 #pragma once
-#include "../model/network/network.hpp"
+#include "model/network/network.hpp"
 
 #include <iostream>
 #include <string>
