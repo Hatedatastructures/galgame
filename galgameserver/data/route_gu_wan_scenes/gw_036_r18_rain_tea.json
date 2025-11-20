@@ -1,10 +1,11 @@
-﻿{
+{
     "scene_id":  "gw_036_r18_rain_tea",
     "title":  "雨夜茶阁（R-18）",
     "location":  "茶阁后室",
     "time_of_day":  "夜",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
-    "cg_image":  "assets/cg/cg_gw_rain_tea_01.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
+    "cg_image":  "assets/cg/cg_gw_rain_tea_01.webp",
+    "cg_audio":  "assets/cg/cg_gw_rain_tea_01.mp3",
     "char_image":  "",
     "preconditions":  {
                           "gu_wan_qin_mi_du":  "\u003e=70",
@@ -44,7 +45,7 @@
                       {
                           "speaker":  "gu_wan",
                           "line":  "不冷。只是心跳有些乱。",
-                          "emotion":  "smile"
+                          "emotion":  "gentle"
                       },
                       {
                           "speaker":  "lin_qing_he",

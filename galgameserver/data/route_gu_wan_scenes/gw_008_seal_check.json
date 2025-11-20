@@ -1,9 +1,9 @@
-﻿{
+{
     "scene_id":  "gw_008_seal_check",
     "title":  "封印核查",
     "location":  "茶仓门前",
     "time_of_day":  "夜",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
     "preconditions":  {
 
                       },

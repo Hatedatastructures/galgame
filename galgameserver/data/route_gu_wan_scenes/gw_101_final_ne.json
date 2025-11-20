@@ -1,9 +1,9 @@
-﻿{
+{
     "scene_id":  "gw_101_final_ne",
     "title":  "结局：当下（NE）",
     "location":  "茶阁",
     "time_of_day":  "当下",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
     "preconditions":  {
                           "final_ne":  1
                       },

@@ -33,15 +33,35 @@ function get_scene(scene_id)
  */
 function check_preconditions(scene_obj)
 {
-    if (!scene_obj.preconditions) { return true; }
-    for (const key in scene_obj.preconditions) {
-        const expected = scene_obj.preconditions[key];
-        const actual = game_state.variables[key];
-        if (typeof expected === "number") {
-            if (actual !== expected) { return false; }
-        } else if (typeof expected === "string" && expected.startsWith(">=")) {
-            const threshold = Number(expected.slice(2));
-            if (!(actual >= threshold)) { return false; }
+    const legacy = scene_obj.preconditions;
+    if (legacy) {
+        for (const key in legacy) {
+            const expected = legacy[key];
+            const actual = game_state.variables[key];
+            if (typeof expected === "number") {
+                if (actual !== expected) { return false; }
+            } else if (typeof expected === "string" && expected.startsWith(">=")) {
+                const threshold = Number(expected.slice(2));
+                if (!(actual >= threshold)) { return false; }
+            }
+        }
+    }
+    const v2 = Array.isArray(scene_obj.preconditions_v2) ? scene_obj.preconditions_v2 : null;
+    if (v2) {
+        for (const cond of v2) {
+            const key = cond.var;
+            const op = cond.op;
+            const val = cond.value;
+            const actual = game_state.variables[key];
+            switch (op) {
+                case "eq": if (!(actual === val)) { return false; } break;
+                case "ne": if (!(actual !== val)) { return false; } break;
+                case "ge": if (!(actual >= val)) { return false; } break;
+                case "gt": if (!(actual > val)) { return false; } break;
+                case "le": if (!(actual <= val)) { return false; } break;
+                case "lt": if (!(actual < val)) { return false; } break;
+                default: break;
+            }
         }
     }
     return true;

@@ -1,10 +1,11 @@
-﻿{
+{
     "scene_id":  "gw_100_final_he",
     "title":  "结局：永远（HE）",
     "location":  "茶阁",
     "time_of_day":  "永远",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
-    "cg_image":  "assets/cg/cg_gw_forever_01.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
+    "cg_image":  "assets/cg/cg_gw_forever_01.webp",
+    "cg_audio":  "assets/cg/cg_gw_forever_01.mp3",
     "char_image":  "",
     "preconditions":  {
                           "final_he":  1

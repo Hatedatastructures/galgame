@@ -11,8 +11,7 @@ const SAVE_KEY_PREFIX = "gw_save_slot_";
  * @brief `保存到槽`
  * @param {number} slot_id `槽位ID`
  */
-function save_to_slot(slot_id)
-{
+function save_to_slot(slot_id) {
     const payload = {
         current_scene_id: game_state.current_scene_id,
         current_dialogue_index: game_state.current_dialogue_index,
@@ -25,8 +24,7 @@ function save_to_slot(slot_id)
  * @brief `从槽读取`
  * @param {number} slot_id `槽位ID`
  */
-function load_from_slot(slot_id)
-{
+function load_from_slot(slot_id) {
     const raw = localStorage.getItem(SAVE_KEY_PREFIX + slot_id);
     if (!raw) { return false; }
     try {

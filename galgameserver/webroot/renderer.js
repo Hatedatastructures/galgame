@@ -83,7 +83,10 @@ function format_speaker_name(speaker)
  */
 function refresh_backlog_panel()
 {
-    backlog_panel_el.innerHTML = game_state.backlog_lines.map(l => `<div>${l}</div>`).join("");
+    const list_el = document.getElementById("backlog_list");
+    if (!list_el) { return; }
+    list_el.innerHTML = game_state.backlog_lines.map(l => `<li>${l}</li>`).join("");
+    list_el.scrollTop = 0;
 }
 
 /**
@@ -97,6 +100,7 @@ function apply_scene_visuals(scene)
     const char_urls = Array.isArray(scene.char_images) ? scene.char_images : null;
     const char_positions = Array.isArray(scene.char_positions) ? scene.char_positions : null;
     const cg_url = scene.cg_image || null;
+    const cg_audio_url = scene.cg_audio || null;
 
     if (bg_url && bg_url !== game_state.current_bg) {
         preload_and_apply_background(bg_url);
@@ -126,6 +130,15 @@ function apply_scene_visuals(scene)
             cg_layer_el.style.backgroundImage = "";
             cg_layer_el.style.opacity = 0;
             game_state.current_cg = null;
+        }
+    }
+
+    if (cg_audio_url !== undefined) {
+        if (cg_audio_url && cg_audio_url !== game_state.current_cg_audio) {
+            audio_manager.play_se(cg_audio_url);
+            game_state.current_cg_audio = cg_audio_url;
+        } else if (!cg_audio_url) {
+            game_state.current_cg_audio = null;
         }
     }
 }

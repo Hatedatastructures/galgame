@@ -1,10 +1,10 @@
-﻿{
+{
     "scene_id": "gw_001_intro",
     "title": "雨巷相遇",
     "location": "茶馆外雨巷",
     "time_of_day": "傍晚",
-    "bg_image": "assets/bg/bg_rain_alley_01.png",
-    "char_image": "assets/char/char_gu_wan_default.png",
+    "bg_image": "assets/bg/bg_rain_alley_01.webp",
+    "char_image": "assets/char/char_gu_wan_default.webp",
     "preconditions": {
         "route_gu_wan_locked": 0
     },
@@ -42,7 +42,7 @@
         {
             "speaker": "gu_wan",
             "line": "书院之事繁杂吧？我只懂得煮茶。",
-            "emotion": "smile"
+            "emotion": "gentle"
         },
         {
             "speaker": "lin_qing_he",
@@ -102,7 +102,7 @@
         {
             "speaker": "gu_wan",
             "line": "你会说话。茶倒会更好喝。",
-            "emotion": "smile"
+            "emotion": "gentle"
         },
         {
             "speaker": "lin_qing_he",

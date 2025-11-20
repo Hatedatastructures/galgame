@@ -1,9 +1,9 @@
-﻿{
+{
     "scene_id":  "gw_052_ending_be",
     "title":  "结局：误解成隙（BE）",
     "location":  "雨巷",
     "time_of_day":  "夜",
-    "bg_image":  "assets/bg/bg_rain_alley_01.png",
+    "bg_image":  "assets/bg/bg_rain_alley_01.webp",
     "preconditions":  {
 
                       },

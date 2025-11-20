@@ -5,13 +5,17 @@
 
 "use strict";
 
+// 路由元数据缓存（从JSON顶层读取并保留，用于导出）
+let route_metadata = null;
+
 /**
  * @brief `加载剧情文件并解析`
  * @returns {Promise<void>}
  */
 async function load_script_from_markdown()
 {
-    const urls_to_try = ["./data/route_gu_wan.json", "../data/route_gu_wan.json", "../plot.md", "./plot.md"]; // 优先JSON，其次MD
+    // 优先走后端接口，其次走静态JSON，最后回退到MD
+    const urls_to_try = ["/api/route", "/data/route_gu_wan.json", "./data/route_gu_wan.json", "../data/route_gu_wan.json", "../plot.md", "./plot.md"]; // 优先JSON，其次MD
     let md_text = null;
     let json_text = null;
     for (const url of urls_to_try) {
@@ -35,6 +39,19 @@ async function load_script_from_markdown()
         try {
             const data = JSON.parse(json_text);
             if (Array.isArray(data.scenes)) {
+                // 记录顶层元数据
+                route_metadata = {
+                    route_id: data.route_id,
+                    title: data.title,
+                    author: data.author,
+                    schema_version: data.schema_version,
+                    emotions_enum: data.emotions_enum,
+                    characters: data.characters,
+                    assets_manifest: data.assets_manifest,
+                    dialogue_target_count: data.dialogue_target_count,
+                    scene_target_count: data.scene_target_count,
+                    constants: data.constants
+                };
                 for (const s of data.scenes) { register_scene(s); }
                 return true;
             }
@@ -172,4 +189,18 @@ function generate_filler_line(location, idx)
         `我们在同一处。`
     ];
     return base[idx % base.length];
+}
+
+/**
+ * @brief `从服务端获取指定场景JSON`
+ * @param {string} scene_id `场景ID`
+ * @returns {Promise<object|null>}
+ */
+async function fetch_scene_json_from_server(scene_id)
+{
+    try {
+        const resp = await fetch(`/api/scene/${scene_id}`);
+        if (!resp.ok) return null;
+        return await resp.json();
+    } catch { return null; }
 }

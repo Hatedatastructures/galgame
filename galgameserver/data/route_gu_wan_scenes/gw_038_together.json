@@ -1,9 +1,9 @@
-﻿{
+{
     "scene_id":  "gw_038_together",
     "title":  "携手同行",
     "location":  "前厅",
     "time_of_day":  "次日",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
     "preconditions":  {
 
                       },

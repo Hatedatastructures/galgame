@@ -1,12 +1,12 @@
-﻿{
+{
     "scene_id":  "gw_054_deep_talk_2",
     "title":  "深谈其二",
     "location":  "茶阁后室",
     "time_of_day":  "深夜",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
     "char_images":  [
-                        "assets/char/char_gu_wan_calm.png",
-                        "assets/char/char_lin_qing_he_gentle.png"
+                        "assets/char/char_gu_wan_calm.webp",
+                        "assets/char/char_lin_qing_he_gentle.webp"
                     ],
     "char_positions":  [
                            {
@@ -195,7 +195,7 @@
                       {
                           "speaker":  "lin_qing_he",
                           "line":  "恋字太甜，小心蛀牙。",
-                          "emotion":  "smile"
+                          "emotion":  "gentle"
                       },
                       {
                           "speaker":  "gu_wan",

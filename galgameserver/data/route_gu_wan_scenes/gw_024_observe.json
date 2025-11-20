@@ -1,9 +1,9 @@
-﻿{
+{
     "scene_id":  "gw_024_observe",
     "title":  "暗中观察",
     "location":  "渡口背巷",
     "time_of_day":  "夜半",
-    "bg_image":  "assets/bg/bg_river_dock_01.png",
+    "bg_image":  "assets/bg/bg_river_dock_01.webp",
     "preconditions":  {
 
                       },

@@ -1,10 +1,11 @@
-﻿{
+{
     "scene_id":  "gw_037_aftercare",
     "title":  "事后关怀",
     "location":  "后室",
     "time_of_day":  "夜深",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
-    "cg_image":  "assets/cg/cg_gw_backroom_aftercare_01.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
+    "cg_image":  "assets/cg/cg_gw_backroom_aftercare_01.webp",
+    "cg_audio":  "assets/cg/cg_gw_backroom_aftercare_01.mp3",
     "char_image":  "",
     "preconditions":  {
                           "route_stability_gw":  "\u003e=10"
@@ -13,7 +14,7 @@
                       {
                           "speaker":  "gu_wan",
                           "line":  "茶尚温。你也是。",
-                          "emotion":  "smile"
+                          "emotion":  "gentle"
                       },
                       {
                           "speaker":  "lin_qing_he",

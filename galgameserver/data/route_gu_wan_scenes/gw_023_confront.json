@@ -1,9 +1,9 @@
-﻿{
+{
     "scene_id":  "gw_023_confront",
     "title":  "石桥对质",
     "location":  "石桥",
     "time_of_day":  "夜半",
-    "bg_image":  "assets/bg/bg_river_dock_01.png",
+    "bg_image":  "assets/bg/bg_river_dock_01.webp",
     "preconditions":  {
 
                       },

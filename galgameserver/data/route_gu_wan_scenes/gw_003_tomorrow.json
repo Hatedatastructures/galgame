@@ -1,4 +1,4 @@
-﻿{
+{
     "scene_id":  "gw_003_tomorrow",
     "title":  "明日再会",
     "location":  "茶阁外檐",
@@ -10,7 +10,7 @@
                       {
                           "speaker":  "gu_wan",
                           "line":  "那便明日。茶不等人，人可等茶。",
-                          "emotion":  "smile"
+                          "emotion":  "gentle"
                       },
                       {
                           "speaker":  "lin_qing_he",

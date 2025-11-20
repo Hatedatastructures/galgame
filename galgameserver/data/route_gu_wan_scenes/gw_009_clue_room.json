@@ -1,9 +1,9 @@
-﻿{
+{
     "scene_id":  "gw_009_clue_room",
     "title":  "后室合线",
     "location":  "茶阁后室",
     "time_of_day":  "夜深",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
     "preconditions":  {
 
                       },

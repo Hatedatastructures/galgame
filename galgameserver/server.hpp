@@ -11,6 +11,7 @@
 #include <filesystem>
 #include <optional>
 #include <unordered_map>
+#include <list>
 #include <boost/asio.hpp>
 #include <atomic>
 
@@ -107,6 +108,58 @@ class server
   std::string web_root;
   boost::asio::io_context &io_context;                                               // io上下文
   status_response status_htmlresponses;                                              // 状态响应
+  struct lru_cache
+  {
+    std::size_t capacity_bytes{64 * 1024 * 1024};
+    std::size_t size_bytes{0};
+    std::list<std::string> recency;
+    struct entry { std::string data; std::size_t bytes; std::list<std::string>::iterator it; };
+    std::unordered_map<std::string, entry> map;
+
+    std::string get(const std::string &key)
+    {
+      auto it = map.find(key);
+      if (it == map.end())
+        return {};
+      recency.splice(recency.begin(), recency, it->second.it);
+      return it->second.data;
+    }
+
+    void put(std::string key, std::string data)
+    {
+      std::size_t bytes = data.size();
+      auto it = map.find(key);
+      if (it != map.end())
+      {
+        size_bytes -= it->second.bytes;
+        it->second.data = std::move(data);
+        it->second.bytes = bytes;
+        recency.splice(recency.begin(), recency, it->second.it);
+        size_bytes += bytes;
+      }
+      else
+      {
+        recency.push_front(key);
+        map.emplace(key, entry{std::move(data), bytes, recency.begin()});
+        size_bytes += bytes;
+      }
+      while (size_bytes > capacity_bytes && !recency.empty())
+      {
+        auto old_key = recency.back();
+        auto mit = map.find(old_key);
+        if (mit != map.end())
+        {
+          size_bytes -= mit->second.bytes;
+          map.erase(mit);
+        }
+        recency.pop_back();
+      }
+    }
+
+    void set_capacity(std::size_t cap) { capacity_bytes = cap; }
+  };
+  lru_cache asset_cache;
+  std::mutex asset_cache_mtx;
   boost::asio::ip::tcp::endpoint endpoint;                                           // tcp端点
   boost::asio::ip::tcp::acceptor acceptor;                                           // tcp监听器
   session::session_management<http::request<>, http::response<>> session_management; // 会话连接管理
@@ -127,6 +180,47 @@ private:
     if (it == extension_map.end())
       return "text/plain";
     return it->second;
+  }
+
+  /**
+   * @brief 读取文件（带内存缓存）
+   * @param full 规范化后的绝对路径
+   * @return 文件内容（若失败返回空）
+   */
+  std::string read_file_cached(const std::filesystem::path &full)
+  {
+    const std::string key = std::filesystem::weakly_canonical(full).string();
+    {
+      std::scoped_lock lk(asset_cache_mtx);
+      std::string cached = asset_cache.get(key);
+      if (!cached.empty())
+        return cached;
+    }
+    std::ifstream file(key, std::ios::binary);
+    if (!file)
+      return {};
+    std::string data((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+    {
+      std::scoped_lock lk(asset_cache_mtx);
+      asset_cache.put(key, std::move(data));
+      return asset_cache.get(key);
+    }
+  }
+
+  std::string build_etag_for_path(const std::string &file_path)
+  {
+    try
+    {
+      std::filesystem::path p(file_path);
+      if (std::filesystem::exists(p))
+      {
+        auto sz = std::filesystem::file_size(p);
+        auto tp = std::filesystem::last_write_time(p).time_since_epoch().count();
+        return std::format("\"{}-{}\"", sz, tp);
+      }
+    }
+    catch (...) {}
+    return {};
   }
 
   /**
@@ -164,8 +258,7 @@ private:
   http::response<> make_static_response(const std::string &file_path, bool keep_alive)
   {
     http::response<> response;
-    asset reader(file_path);
-    auto body = std::move(reader.file_data);
+    auto body = read_file_cached(std::filesystem::path(file_path));
     if (body.empty())
     {
       response.result(boost::beast::http::status::not_found);
@@ -175,7 +268,22 @@ private:
     else
     {
       response.result(boost::beast::http::status::ok);
-      response.base().set(http::field::content_type, mime_type(file_path));
+      const std::string mt = mime_type(file_path);
+      response.base().set(http::field::content_type, mt);
+      if (mt.starts_with("image/") || mt == "application/javascript" || mt == "text/css" || mt.starts_with("audio/") || mt.starts_with("video/"))
+      {
+        response.base().set(http::field::cache_control, "public, max-age=31536000, immutable");
+      }
+      else if (mt == "text/html")
+      {
+        response.base().set(http::field::cache_control, "no-cache");
+      }
+      else if (mt == "application/json")
+      {
+        response.base().set(http::field::cache_control, "no-store");
+      }
+      auto etag = build_etag_for_path(file_path);
+      if (!etag.empty()) { response.base().set(http::field::etag, etag); }
       response.body() = std::move(body);
     }
     response.keep_alive(keep_alive);
@@ -195,10 +303,94 @@ private:
     std::string target{target_sv.data(), target_sv.size()};
     bool keep = request.keep_alive();
 
+    // 统一允许跨域
+    auto make_ok_json = [&](std::string body) 
+    {
+      http::response<> res;
+      res.result(boost::beast::http::status::ok);
+      res.base().set(http::field::content_type, "application/json; charset=UTF-8");
+      res.body() = std::move(body);
+      res.keep_alive(keep);
+      res.base().set(http::field::access_control_allow_origin, "*");
+      res.base().set(http::field::cache_control, "no-store");
+      res.base().content_length(res.body().size());
+      res.prepare_payload();
+      return res;
+    };
+
     if (target == "/api/health")
     {
       http::response<> res;
       res.result(boost::beast::http::status::ok);
+      res.base().set(http::field::access_control_allow_origin, "*");
+      return res;
+    }
+
+    // /api/route -> 返回主路由JSON
+    if (target == "/api/route")
+    {
+      auto root = std::filesystem::weakly_canonical(std::filesystem::path(web_root));
+      auto full = std::filesystem::weakly_canonical(root / "../data/route_gu_wan.json");
+      std::string body = read_file_cached(full);
+      if (body.empty()) return make_404_response(keep);
+      return make_ok_json(std::move(body));
+    }
+
+    // /api/scene/{id}
+    if (target.starts_with("/api/scene/"))
+    {
+      std::string id = target.substr(std::string("/api/scene/").size());
+      // 基础校验，拒绝路径穿越
+      if (id.find("..") != std::string::npos) return make_404_response(keep);
+      auto root = std::filesystem::weakly_canonical(std::filesystem::path(web_root));
+      auto full = std::filesystem::weakly_canonical(root / ("../data/route_gu_wan_scenes/" + id + ".json"));
+      std::string body = read_file_cached(full);
+      if (body.empty()) return make_404_response(keep);
+      return make_ok_json(std::move(body));
+    }
+
+    if (target.starts_with("/data/"))
+    {
+      auto root = std::filesystem::weakly_canonical(std::filesystem::path(web_root));
+      auto data_root = std::filesystem::weakly_canonical(root / "../data");
+      auto full = std::filesystem::weakly_canonical(data_root / target.substr(6));
+      std::string data_root_str = data_root.string();
+      std::string full_str = full.string();
+      if (full_str.rfind(data_root_str, 0) != 0)
+        return make_404_response(keep);
+      auto inm_it = request.base().find(http::field::if_none_match);
+      if (inm_it != request.base().end())
+      {
+        auto etag = build_etag_for_path(full_str);
+        if (!etag.empty() && std::string(inm_it->value()) == etag)
+        {
+          http::response<> res;
+          res.result(boost::beast::http::status::not_modified);
+          res.base().set(http::field::etag, etag);
+          auto mt = mime_type(full_str);
+          res.base().set(http::field::content_type, mt);
+          if (mt.starts_with("image/") || mt == "application/javascript" || mt == "text/css" || mt.starts_with("audio/") || mt.starts_with("video/"))
+            res.base().set(http::field::cache_control, "public, max-age=31536000, immutable");
+          else if (mt == "text/html") res.base().set(http::field::cache_control, "no-cache");
+          else if (mt == "application/json") res.base().set(http::field::cache_control, "no-store");
+          res.keep_alive(keep);
+          res.base().set(http::field::access_control_allow_origin, "*");
+          res.base().content_length(0);
+          res.prepare_payload();
+          return res;
+        }
+      }
+      auto res = make_static_response(full_str, keep);
+      res.base().set(http::field::access_control_allow_origin, "*");
+      return res;
+    }
+
+    if (target == "/plot.md")
+    {
+      auto root = std::filesystem::weakly_canonical(std::filesystem::path(web_root));
+      auto full = std::filesystem::weakly_canonical(root / "../plot.md");
+      auto res = make_static_response(full.string(), keep);
+      res.base().set(http::field::access_control_allow_origin, "*");
       return res;
     }
 
@@ -221,7 +413,11 @@ private:
           throw std::runtime_error("path out of root");
       }
       if (std::filesystem::exists(full) && std::filesystem::is_regular_file(full))
-        return make_static_response(full.string(),keep);
+      {
+        auto res = make_static_response(full.string(), keep);
+        res.base().set(http::field::access_control_allow_origin, "*");
+        return res;
+      }
     }
     catch (...)
     {

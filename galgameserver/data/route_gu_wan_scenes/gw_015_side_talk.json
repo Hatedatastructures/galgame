@@ -1,4 +1,4 @@
-﻿{
+{
     "scene_id":  "gw_015_side_talk",
     "title":  "旁敲侧击",
     "location":  "后院",
@@ -10,7 +10,7 @@
                       {
                           "speaker":  "gu_wan",
                           "line":  "闲语之间，常藏真意。",
-                          "emotion":  "smile"
+                          "emotion":  "gentle"
                       },
                       {
                           "speaker":  "lin_qing_he",

@@ -1,12 +1,12 @@
-﻿{
+{
     "scene_id": "gw_063_sunrise_together",
     "title": "并肩看日出",
     "location": "茶阁屋顶",
     "time_of_day": "日出",
-    "bg_image": "assets/bg/bg_sunrise_01.png",
+    "bg_image": "assets/bg/bg_sunrise_01.webp",
     "char_images": [
-        "assets/char/char_gu_wan_gentle.png",
-        "assets/char/char_lin_qing_he_calm.png"
+        "assets/char/char_gu_wan_gentle.webp",
+        "assets/char/char_lin_qing_he_calm.webp"
     ],
     "char_positions": [
         {

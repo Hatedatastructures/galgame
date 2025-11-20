@@ -1,4 +1,4 @@
-﻿{
+{
     "scene_id":  "gw_005_next_day",
     "title":  "次日茶香",
     "location":  "茶阁前厅",
@@ -10,7 +10,7 @@
                       {
                           "speaker":  "gu_wan",
                           "line":  "先生果来。今日茶更和软。",
-                          "emotion":  "smile"
+                          "emotion":  "gentle"
                       },
                       {
                           "speaker":  "lin_qing_he",

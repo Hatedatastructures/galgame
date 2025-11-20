@@ -1,9 +1,9 @@
-﻿{
+{
     "scene_id":  "gw_011_ask_keeper",
     "title":  "仓管问询",
     "location":  "茶仓侧",
     "time_of_day":  "次日",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
     "preconditions":  {
 
                       },

@@ -1,10 +1,10 @@
-﻿{
+{
     "scene_id":  "gw_021_track_person",
     "title":  "追踪旧客",
     "location":  "石桥与渡口",
     "time_of_day":  "夜半",
-    "bg_image":  "assets/bg/bg_river_dock_01.png",
-    "char_image":  "assets/char/char_gu_wan_think_calm.png",
+    "bg_image":  "assets/bg/bg_river_dock_01.webp",
+    "char_image":  "assets/char/char_gu_wan_think_calm.webp",
     "preconditions":  {
 
                       },

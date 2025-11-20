@@ -17,6 +17,7 @@ const game_state = {
     current_bg: null,
     current_char: null,
     current_cg: null,
+    current_cg_audio: null,
     variables: {
         route_gu_wan_locked: 0,
         gu_wan_qin_mi_du: 0,
@@ -27,7 +28,8 @@ const game_state = {
     settings: {
         text_speed: 30,
         bgm_volume: 0.6,
-        se_volume: 0.8
+        se_volume: 0.8,
+        theme: "dark"
     }
 };
 
@@ -41,6 +43,10 @@ function reset_game_state()
     game_state.auto_mode_enabled = false;
     game_state.skip_mode_enabled = false;
     game_state.backlog_lines = [];
+    game_state.current_bg = null;
+    game_state.current_char = null;
+    game_state.current_cg = null;
+    game_state.current_cg_audio = null;
     game_state.variables = {
         route_gu_wan_locked: 0,
         gu_wan_qin_mi_du: 0,
@@ -48,4 +54,5 @@ function reset_game_state()
         route_stability_gw: 0,
         tea_debt_resolved: 0
     };
+    game_state.settings.theme = localStorage.getItem("gw_theme") || "dark";
 }

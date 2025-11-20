@@ -1,10 +1,10 @@
-﻿{
+{
     "scene_id":  "gw_006_night_store",
     "title":  "夜访茶仓",
     "location":  "后院茶仓",
     "time_of_day":  "夜",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
-    "char_image":  "assets/char/char_gu_wan_firm.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
+    "char_image":  "assets/char/char_gu_wan_firm.webp",
     "preconditions":  {
 
                       },

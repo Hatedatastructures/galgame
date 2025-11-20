@@ -1,9 +1,9 @@
-﻿{
+{
     "scene_id":  "gw_010_ask_accountant",
     "title":  "账房问询",
     "location":  "前厅边案",
     "time_of_day":  "次日",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
     "preconditions":  {
 
                       },

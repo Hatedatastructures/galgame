@@ -1,10 +1,10 @@
-﻿{
+{
     "scene_id":  "gw_035_confirm_relation",
     "title":  "关系确认",
     "location":  "后室",
     "time_of_day":  "黄昏",
-    "bg_image":  "assets/bg/bg_teahouse_01.png",
-    "char_image":  "assets/char/char_gu_wan_gentle.png",
+    "bg_image":  "assets/bg/bg_teahouse_01.webp",
+    "char_image":  "assets/char/char_gu_wan_gentle.webp",
     "preconditions":  {
                           "gu_wan_qin_mi_du":  "\u003e=70"
                       },
