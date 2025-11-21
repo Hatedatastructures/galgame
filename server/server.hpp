@@ -414,7 +414,6 @@ private:
     {
       return make_404_response(false);
     }
-
     return make_404_response(false);
   }
 

@@ -16,6 +16,5 @@ int main()
     std::cout << "io_context.run() finished" << std::endl;
   };
   std::jthread thread(io_function);
-
   return 0;
 }
