@@ -18,3 +18,10 @@ int main()
   std::jthread thread(io_function);
   return 0;
 }
+
+// Linux静态编译
+
+//  g++ -Wall -Wextra -g3 -std=c++23 -march=native -O2 -pthread server.cpp -o output/server -L/usr/lib/x86_64-linux-gnu 
+//  -L/home/wang/桌面/galgame/server/zstd/lib -Wl,
+//  --start-group -Wl,-Bstatic -lssl -lcrypto -lcryptopp -lboost_system -lboost_json -lz -lzstd -lpthread -ldl -lrt 
+//  -Wl,-Bdynamic -Wl,--end-group -static-libstdc++ -static-libgcc -Wl,--warn-unresolved-symbols
